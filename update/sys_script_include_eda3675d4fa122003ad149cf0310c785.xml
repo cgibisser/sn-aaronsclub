@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_aaro2_club_claim.Utils</api_name>
+        <client_callable>false</client_callable>
+        <description>This is a general util Script Include used by Club Claims requests.&#13;
+&#13;
+It contains the following methods:&#13;
+&#13;
+/*******************************************************************&#13;
+* Inserts a new record into the provided table with the provided field values&#13;
+*&#13;
+* @method generateRecord&#13;
+* @param {String} table - Table name of the target table that the new record will be inserted into 	&#13;
+* @param {Object} obj - Contains {field name : field value}&#13;
+* @return {String} the number of the new request&#13;
+*******************************************************************/	</description>
+        <name>Utils</name>
+        <script><![CDATA[var Utils = Class.create();
+Utils.prototype = {
+    initialize: function() {
+    },
+
+	/*******************************************************************
+	* Inserts a new record into the provided table with the provided field values
+	*
+	* @method generateRecord
+	* @param {String} table - Table name of the target table that the new record will be inserted into 	
+	* @param {Object} obj - Contains {field name : field value}
+	* @return {string} the record number of the newlest inserted record. 
+	*******************************************************************/		
+	generateRecord : function (table, ob, agrArray, todoArray){
+		var number, sys_id;
+		var gr = new GlideRecord(table);
+		gr.initialize();
+		number = gr.number;
+		sys_id = gr.sys_id;
+		for(var prop in ob){
+			gr[prop] = ob[prop];
+		}
+		gr.insert();
+		for (var i=0; i < agrArray.length; i++) {
+			var agreementSys;
+			var agreementGR = new GlideRecord('x_aaro2_club_claim_agreement');
+			agreementGR.initialize();
+			agreementSys = agreementGR.sys_id;
+			agreementGR.claim = sys_id;
+			agreementGR.agreement_id = agrArray[i].AgreementId;
+			agreementGR.client_id = agrArray[i].ClientId;
+			agreementGR.agreement_number = agrArray[i].AgreementNumber;
+			agreementGR.agreement_status = agrArray[i].AgreementStatusName;
+			agreementGR.estimated_retail_amount = agrArray[i].EstimatedRetailAmount;
+			agreementGR.lease_frequency = agrArray[i].LeaseFrequencyName;
+			agreementGR.amount_paid_to_date = agrArray[i].AmountPaidToDate;
+			agreementGR.paid_through_date = agrArray[i].PaidThroughDate;
+			agreementGR.store = getStore(agrArray[i].Store.toString());
+			agreementGR.estimated_agreement_value = agrArray[i].EstimatedAgreementValue;
+			agreementGR.lease_term = agrArray[i].LeaseTerm;
+			agreementGR.balance = agrArray[i].Balance;
+			agreementGR.start_date = agrArray[i].StartDate;
+			agreementGR.insert();
+			
+			for (var j=0; j < agrArray[i].Payments.length; j++) {
+				var paymentGR = new GlideRecord('x_aaro2_club_claim_payment');
+				paymentGR.initialize();
+				paymentGR.agreement = agreementSys;
+				paymentGR.agreement_payment_id = agrArray[i].Payments[j].AgreementPaymentId;
+				paymentGR.agreement_id = agrArray[i].Payments[j].AgreementId;
+				paymentGR.payment_date = agrArray[i].Payments[j].PaymentDate;
+				paymentGR.payment_amount = agrArray[i].Payments[j].PaymentAmount;
+				paymentGR.old_paid_through_date = agrArray[i].Payments[j].OldPaidThroughDate;
+				paymentGR.new_paid_through_date = agrArray[i].Payments[j].NewPaidThroughDate;
+				paymentGR.balance_applied = agrArray[i].Payments[j].BalanceApplied;
+				paymentGR.days_non_renewed = agrArray[i].Payments[j].DaysNonRenewed;
+				paymentGR.total_payment_amount = agrArray[i].Payments[j].TotalPaymentAmount;
+				paymentGR.insert();
+			}
+			
+			//Check if any items are marked as selected
+			var flag = false;
+			for (var l=0; l < agrArray[i].Items.length; l++) {
+				if (agrArray[i].Items[l].Selected == true) {
+					flag = true;
+					break;
+				}
+			}
+			
+			for (var k=0; k < agrArray[i].Items.length; k++) {
+				var itemGR = new GlideRecord('x_aaro2_club_claim_item');
+				itemGR.initialize();
+				itemGR.agreement = agreementSys;
+				itemGR.agreement_id = agrArray[i].Items[k].AgreementId;
+				itemGR.agreement_item_id = agrArray[i].Items[k].AgreementItemId;
+				itemGR.current_item_lease_payment = agrArray[i].Items[k].CurrentItemLeasePayment;
+				itemGR.item_description = agrArray[i].Items[k].ItemDescription;
+				itemGR.item_number = agrArray[i].Items[k].ItemNumber;
+				itemGR.manufacturer = agrArray[i].Items[k].Manufacturer;
+				itemGR.model_number = agrArray[i].Items[k].ModelNumber;
+				if (flag) {
+					itemGR.selected_item = agrArray[i].Items[k].Selected;
+				} else {
+					itemGR.selected_item = true;
+				}
+				itemGR.serial_number = agrArray[i].Items[k].SerialNumber;
+				itemGR.sku = agrArray[i].Items[k].SKU;
+				itemGR.insert();
+			}
+		}
+		
+		for (var m=0; m < todoArray.length; m++) {
+			var todoGR = new GlideRecord('x_aaro2_club_claim_todo');
+			todoGR.initialize();
+			todoGR.todo = todoArray[m].docuement;
+			todoGR.club_claim = sys_id;
+			todoGR.order = todoArray[m].order;
+			todoGR.optional = todoArray[m].optional;
+			todoGR.complete = todoArray[m].complete;
+			todoGR.insert();
+		}
+		
+		return {number: number.toString(), sys_id: sys_id.toString()};
+		
+		/*******************************************************************
+		* Get the store sys_id based on the name
+		*
+		* @method getStore
+		* @param {String} storeName - Store location number (C0974)	
+		* @return {string} Sys_id of the store location 
+		*******************************************************************/
+		function getStore(storeName) {
+			var storeGR = new GlideRecord('core_company');
+			storeGR.addQuery('name', storeName);
+			storeGR.query();
+			storeGR.next();
+			return storeGR.sys_id.toString();
+		}
+	},
+	
+	/*******************************************************************
+	* Updates a todo to complete or not complete
+	*
+	* @method updateTodo
+	* @param {String} sysID - The sys_id of the record to update 	
+	* @param {Boolean} value - Either true or false to update the complete 
+	* field. 
+	* @return {string} the sys_id of the record updated. 
+	*******************************************************************/		
+	updateTodo : function(sysID, value) {
+		var todo = new GlideRecord("x_aaro2_club_claim_todo");
+		todo.addQuery("sys_id", sysID);
+		todo.query();
+		todo.next();
+		todo.complete = value;
+		return todo.update();
+	},
+	
+	/*******************************************************************
+	* Creates a new todo
+	*
+	* @method addTodo
+	* @param {String} clubClaim - The sys_id of the claim record	
+	* @param {String} todo - The todo to add
+	* @param {Boolean} optional - True/False if its optional
+	* @return {string} the sys_id of the record generated. 
+	*******************************************************************/	
+	addTodo : function(clubClaim, todo, optional) {
+		var todoRecord = new GlideRecord("x_aaro2_club_claim_todo");
+		todoRecord.addQuery('club_claim', clubClaim);
+		todoRecord.orderByDesc("order");
+		todoRecord.query();
+		todoRecord.next();
+		var gr = new GlideRecord("x_aaro2_club_claim_todo");
+		gr.initialize();
+		gr.club_claim = clubClaim;
+		gr.todo = todo;
+		gr.optional = optional;
+		gr.order = parseInt(todoRecord.order) + 50;
+		return gr.insert();	
+	},
+	
+    type: 'Utils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>xxpgrupe</sys_created_by>
+        <sys_created_on>2016-08-29 13:13:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>eda3675d4fa122003ad149cf0310c785</sys_id>
+        <sys_mod_count>56</sys_mod_count>
+        <sys_name>Utils</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_script_include_eda3675d4fa122003ad149cf0310c785</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-11-08 14:57:29</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description>Display the Agreement and Item information for the claim from their respective tables</description>
+        <media_type/>
+        <name>Claim Details</name>
+        <scoped_name>x_aaro2_club_claim_Claim Details</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-08-25 18:46:04</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b3688cdc4fa962803ad149cf0310c74b</sys_id>
+        <sys_mod_count>333</sys_mod_count>
+        <sys_name>Claim Details</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ui_macro_b3688cdc4fa962803ad149cf0310c74b</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-11-08 18:09:01</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<!-- Get a gliderecord of the current claim. Is only needed if we're showing claim info in Details -->
+	<g2:evaluate var="jvar_claim" object="true">
+		var id = RP.getParameterValue('sys_id'); 
+	    var cgr = new GlideRecord("x_aaro2_club_claim_claim");
+	    cgr.addQuery("sys_id", id);
+	    cgr.query();
+		cgr.next();
+	    cgr;
+	</g2:evaluate>	
+	
+	<!-- Get a gliderecord for all the agreements associated with the claim -->
+	<g2:evaluate var="jvar_agreements" object="true">
+		var id = RP.getParameterValue('sys_id'); 
+	    var agr = new GlideRecord("x_aaro2_club_claim_agreement");
+	    agr.addQuery("claim", id);
+		agr.orderBy("agreement_number");
+	    agr.query();
+	    agr;
+	</g2:evaluate>	
+	
+	<!-- Get the required todo list records -->
+	<g2:evaluate var="jvar_required_todos" object="true">
+		var id = RP.getParameterValue('sys_id'); 
+	    var todoGR = new GlideRecord("x_aaro2_club_claim_todo");
+	    todoGR.addQuery("club_claim", id);
+		todoGR.addQuery("optional", false);
+		todoGR.orderBy("order");
+	    todoGR.query();
+	    todoGR;
+	</g2:evaluate>
+	<!-- Get the optional todo list records -->
+	<g2:evaluate var="jvar_optional_todos" object="true">
+		var id = RP.getParameterValue('sys_id'); 
+	    var optionalTodoGR = new GlideRecord("x_aaro2_club_claim_todo");
+	    optionalTodoGR.addQuery("club_claim", id);
+		optionalTodoGR.addQuery("optional", true);
+		optionalTodoGR.orderBy("order");
+	    optionalTodoGR.query();
+	    optionalTodoGR;
+	</g2:evaluate>
+	<g2:evaluate var="jvar_has_role" object="true">
+		var myUserObject = gs.getUser();
+		var isDirectUser = myUserObject.hasRole('x_aaro2_club_claim_user'); 
+		isDirectUser;
+	</g2:evaluate>
+	<j2:if test="$[todoGR.hasNext()]">
+		<div class="col-lg-1 col-lg-offset-1 col-md-12">
+			<label class="control-label">Checklist:</label>
+		</div>
+		<ul class="col-lg-9 col-md-12 list-group">
+			<j2:while test="$[todoGR.next()]">
+				<li class="list-group-item list-group-item-action">
+					<div class="row">
+						<div class="col-xs-6">
+							$[todoGR.getValue('todo')]
+						</div>
+						<div class="col-xs-6">
+							<j2:if test="$[todoGR.getDisplayValue('complete')]">
+								<input type="checkbox" checked="true" class="option" onclick="mark('$[todoGR.sys_id]', false)">Complete</input>
+							</j2:if>
+							<j2:if test="$[todoGR.getDisplayValue('complete') == 'false']">
+								<input type="checkbox" class="option" onclick="mark('$[todoGR.sys_id]', true)">Complete</input>
+							</j2:if>	
+						</div>
+					</div>
+				</li>
+			</j2:while>
+		</ul>
+	</j2:if>
+	<j2:if test="$[optionalTodoGR.hasNext()]">
+		<div class="col-lg-1 col-lg-offset-1 col-md-12">
+			<label class="control-label">Optional:</label>
+		</div>
+		<ul class="col-lg-9 col-md-12 list-group">
+			<j2:while test="$[optionalTodoGR.next()]">
+				<li class="list-group-item list-group-item-action">
+					<div class="row">
+						<div class="col-xs-6">
+							$[optionalTodoGR.getValue('todo')]
+						</div>
+						<div class="col-xs-6">
+							<j2:if test="$[optionalTodoGR.getDisplayValue('complete')]">
+								<input type="checkbox" checked="true" class="option" onclick="mark('$[optionalTodoGR.sys_id]', false)">Complete</input>
+							</j2:if>
+							<j2:if test="$[optionalTodoGR.getDisplayValue('complete') == 'false']">
+								<input type="checkbox" class="option" onclick="mark('$[optionalTodoGR.sys_id]', true)">Complete</input>
+							</j2:if>	
+						</div>
+					</div>
+				</li>
+			</j2:while>
+		</ul>
+	</j2:if>
+	<j2:if test="$[jvar_has_role]">
+		<div class="col-lg-1 col-lg-offset-1 col-md-12">
+			<label class="control-label">Add Todo:</label>
+		</div>
+		<div class="col-lg-9 col-md-12 list-group">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<div class="col-xs-6">
+						<input type="text" class="form-control" id="inputTodo" name="inputTodo" placeholder="Todo"></input>
+					</div>
+					<div class="col-xs-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="optionalCheck">Optional</input>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-6">
+						<button class="btn btn-default" onclick="return addTodo();">Add Todo</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</j2:if>
+	<div class="col-lg-1 col-lg-offset-1 col-md-12">
+		<label class="control-label">Claim Details:</label>
+	</div>
+	<div class="col-lg-9 col-md-12 details">
+		<div class="panel panel-default request_details">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-xs-3">
+						<dl>
+							<dt>Store Number:</dt>
+							<dd>$[cgr.getDisplayValue('company')]</dd>
+						</dl>
+					</div>
+					<div class="col-xs-offset-3 col-xs-3">
+						<dl>
+							<dt>Requested By:</dt>
+							<dd>$[cgr.getDisplayValue('u_ess_request_for')]</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-3">
+						<dl>
+							<dt>Customer:</dt>
+							<dd>$[cgr.getDisplayValue('customer_first_name')] $[cgr.getDisplayValue('customer_last_name')]</dd>
+						</dl>
+					</div>
+					<div class="col-xs-offset-3 col-xs-3">
+						<dl>
+							<dt>Date of Incident:</dt>
+							<dd>$[cgr.getDisplayValue('date_of_incident')]</dd>
+						</dl>
+					</div>
+				</div>				
+				<div class="row">
+					<div class="col-xs-3">
+						<dl>
+							<dt>Claim Type:</dt>
+							<dd>$[cgr.getDisplayValue('claim_type')]</dd>
+						</dl>
+					</div>
+					<div class="col-xs-offset-3 col-xs-3">
+						<dl>
+							<dt>Claim Subtype:</dt>
+							<dd>$[cgr.getDisplayValue('claim_sub_type')]</dd>
+						</dl>
+					</div>
+				</div>
+			</div> <!-- End of panel body -->	
+			<j2:if test="$[agr.hasNext()]">  <!-- Don't show footer if there aren't any agreements on claim -->
+				<div class="panel-footer">
+					<!-- Iterate through all agreement gliderecords -->
+					<j2:while test="$[agr.next()]"> 
+						<div class="row">
+							<div class="col-xs-3">
+								<dl>
+									<dt>Agreement Number:</dt>
+									<dd>$[agr.getDisplayValue('agreement_number')]</dd>
+								</dl>
+							</div>
+							<div class="col-xs-offset-3 col-xs-4">
+								<!-- Create a gliderecord for all the items on the current agreement -->
+								<g2:evaluate var="jvar_items" object="true">
+									var igr = new GlideRecord("x_aaro2_club_claim_item");
+									igr.addQuery('agreement', agr.sys_id);
+									igr.addQuery('selected_item', true);
+									igr.orderBy('item_number');
+									igr.query();
+									igr;
+								</g2:evaluate>
+								<dl>		
+									<dt>Item(s):</dt>
+									<dd>
+										<j2:while test="$[igr.next()]">  <!-- Iterate through all items for the agreement -->
+											$[igr.getDisplayValue('item_number')]<j2:if test="$[igr.hasNext()]">,</j2:if>
+										</j2:while>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</j2:while><!-- end of agreement while loop -->
+				</div>	<!-- End of panel footer -->
+			</j2:if>
+		</div>	
+	</div>	
+	<script>
+		function mark(sysId, value){
+			var requestBody = JSON.stringify({'value' : value, 'sysID' : sysId});
+			var client=new XMLHttpRequest();
+			client.open("post","/api/x_aaro2_club_claim/v1/utils/updateTodo");
+			client.setRequestHeader('Accept','application/json');
+			client.setRequestHeader('Content-Type','application/json');
+			//Eg. UserName="admin", Password="admin" for this code sample.
+			client.setRequestHeader('X-UserToken', g_ck);
+			client.onreadystatechange = function() { 
+				if(this.readyState = this.DONE) {
+					var response = this.response;
+					if(response.result == ''){
+						alert("Unable to update the todo.");
+					}
+				}
+			}; 
+			client.send(requestBody);
+		}
+
+		function addTodo(){
+			var currentRecord = g_form.getUniqueValue();
+			var todoItem = $j('#inputTodo');
+			var optional = $j('input[name="optionalCheck"]:checked');
+			if (optional.is(':checked')) {
+				optional = true;
+			} else {
+				optional = false;
+			}
+
+			var requestBody = JSON.stringify({'todo' : todoItem.val(), 'optional' : optional, 'clubClaim' : currentRecord});
+			var client=new XMLHttpRequest();
+			client.open("post","/api/x_aaro2_club_claim/v1/utils/createTodo");
+			client.setRequestHeader('Accept','application/json');
+			client.setRequestHeader('Content-Type','application/json');
+			//Eg. UserName="admin", Password="admin" for this code sample.
+			client.setRequestHeader('X-UserToken', g_ck);
+			client.onreadystatechange = function() { 
+				if(this.readyState = this.DONE) {
+					var response = this.response;
+					if(response.result == ''){
+						alert("Unable to create the todo.");
+					}
+				}
+			}; 
+			client.send(requestBody);
+			reloadWindow(window);
+			return false;
+		}
+	</script>
+	<style>
+		.list-group, .details {
+			padding-left: 13px !important;
+			padding-right: 65px;
+		}
+		.option {
+			margin: 0px 0 0 !important;
+			margin-right: 6px !important;
+		}
+	</style>
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>

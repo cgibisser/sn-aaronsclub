@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/x_aaro2_club_claim/utils/updateTodo</default_operation_uri>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>updateTodo</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	
+	var body = request.body, sysID, value, utils = new Utils();
+ 	sysID = body.data.sysID;
+ 	value = body.data.value;
+	
+	return utils.updateTodo(sysID, value);
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_aaro2_club_claim/v1/utils/updateTodo</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/updateTodo</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>xxpgrupe</sys_created_by>
+        <sys_created_on>2016-11-07 19:00:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>488259cc4f4f62003ad149cf0310c7f1</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>updateTodo</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ws_operation_488259cc4f4f62003ad149cf0310c7f1</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-11-07 21:02:58</sys_updated_on>
+        <web_service_definition display_value="utils">851d9b594fa122003ad149cf0310c759</web_service_definition>
+        <web_service_version display_value="v1">db4d9b594fa122003ad149cf0310c75c</web_service_version>
+    </sys_ws_operation>
+</record_update>

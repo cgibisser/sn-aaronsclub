@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="estimated_retail_amount" label="Estimated Retail Amount" language="en" table="x_aaro2_club_claim_agreement">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>estimated_retail_amount</element>
+            <help/>
+            <hint/>
+            <label>Estimated Retail Amount</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_agreement</name>
+            <plural>Estimated Retail Amounts</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>xxpgrupe</sys_created_by>
+            <sys_created_on>2016-08-31 16:47:23</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>ddf7e6c64fe1a2003ad149cf0310c7fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Estimated Retail Amount</sys_name>
+            <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+            <sys_update_name>sys_documentation_x_aaro2_club_claim_agreement_estimated_retail_amount_en</sys_update_name>
+            <sys_updated_by>xxpgrupe</sys_updated_by>
+            <sys_updated_on>2016-08-31 16:47:23</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

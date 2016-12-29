@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>This page includes the agreement and item selection for Club Claims. </description>
+        <direct>true</direct>
+        <endpoint>x_aaro2_club_claim_Club_Claims_Stage_3.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<!--Stage 3- choose agreements/items-->
+	<form name="stagethree" novalidate="true">
+		<div class="panel panel-default" ng-controller="submissionController">
+			<div class="panel-heading">
+				<h1>Customer Information</h1>
+			</div>
+			<div class="panel-body">
+				<div class="alert alert-danger" ng-show="showError" >Oh Snap! This customer has no eligible agreements.</div>
+				<div class="form-group required">
+					<label class="control-label">Customer Name</label>
+					<select class="form-control" name="customerName" ng-disabled="submitFlag" 
+							ng-options="customer as customer.Client.FirstName + ' ' + customer.Client.LastName + ' -- ' + 
+										customer.Identification.IdentificationValue for customer in formData.customerList track by customer.Client.ClientId" 
+							ng-model="formData.selectedCustomer" required="true" validate-customer='' ng-change="getAgreementList()">
+						<option ng-show="formData.selectedCustomer == ''" value="">Please Select</option>
+					</select>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-5">
+						<strong style="color:red">At least 1 agreement number must be selected.</strong>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-5">
+						<label>Agreements</label>
+						<select class="form-control" size="10" multiple="true" ng-model="formData.agreementChoices" ng-disabled="submitFlag">
+							<option ng-repeat="agreement in formData.agreementData | filter:{Selected : false} | orderBy : 'AgreementNumber'"  ng-dblclick="selectAgreement(agreement, true)" ng-focus="highlight(agreement)">
+								{{agreement.AgreementNumber}}
+							</option>
+						</select>
+					</div>
+					<div class="col-xs-2">
+						<div class="select_buttons">
+							<button type="button" class="btn btn-default btn-block" ng-click="selectAll(true)" ng-disabled="submitFlag">Select All</button>
+							<button type="button" class="btn btn-default btn-block" ng-click="setHighlighted(true)" ng-disabled="submitFlag"><i class="glyphicon glyphicon-menu-right"></i></button>
+							<button type="button" class="btn btn-default btn-block" ng-click="setHighlighted(false)" ng-disabled="submitFlag"><i class="glyphicon glyphicon-menu-left"></i></button>
+							<button type="button" class="btn btn-default btn-block" ng-click="selectAll(false)" ng-disabled="submitFlag">Remove All</button>
+						</div>
+					</div>
+					<div class="form-group required col-xs-5">
+						<label class="control-label">Selected Agreements</label>
+							<select class="form-control" size="10" multiple="true" ng-model="formData.agreementChoices" ng-disabled="submitFlag">
+								<option ng-repeat="agreement in formData.agreementData | filter:{Selected : true} | orderBy : 'AgreementNumber'" ng-dblclick="selectAgreement(agreement, false)">
+									{{agreement.AgreementNumber}}
+								</option>
+							</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-5">
+						<strong style="color:#001DA2">If all items on an agreement are involved in the claim, no specific items need to be selected.</strong>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-5">
+						<label>Items</label>
+						<select class="form-control" size="10" multiple="true" ng-model="formData.itemChoices" ng-disabled="submitFlag">
+							<option ng-repeat="item in selectedAgreementItems | filter:{Selected : false} | orderBy : 'ItemNumber'" value="{{item.ItemNumber}}" ng-dblclick="selectItem(item, true)">{{item.ItemNumber}} - {{item.ItemDescription}}</option>
+						</select>
+					</div>
+					<div class="col-xs-2">
+						<div class="select_buttons">
+							<button type="button" class="btn btn-default btn-block" ng-click="selectAllItem(true)" ng-disabled="submitFlag">Select All</button>
+							<button type="button" class="btn btn-default btn-block" ng-click="selectHighlightedItem(true)" ng-disabled="submitFlag"><i class="glyphicon glyphicon-menu-right"></i></button>
+							<button type="button" class="btn btn-default btn-block" ng-click="selectHighlightedItem(false)" ng-disabled="submitFlag"><i class="glyphicon glyphicon-menu-left"></i></button>
+							<button type="button" class="btn btn-default btn-block" ng-click="selectAllItem(false)" ng-disabled="submitFlag">Remove All</button>
+						</div>
+					</div>
+					<div class="form-group col-xs-5">
+						<label>Selected Items</label>
+						<select class="form-control" size="10" multiple="true" ng-model="formData.itemChoices" ng-disabled="submitFlag">
+							<option ng-repeat="item in selectedAgreementItems | filter:{Selected : true} | orderBy : 'ItemNumber'" value="{{item.ItemNumber}}" ng-dblclick="selectItem(item, false)">{{item.ItemNumber}} - {{item.ItemDescription}}</option>
+						</select>
+					</div>		
+				</div>
+				<div class="form-group"  >
+					<label>Description of Claim:</label>
+					<textarea ng-model="formData.notes" ng-disabled="submitFlag" class="form-control" maxlength="2000" ng-trim="false" autocomplete="off"></textarea>
+					<div class="char_count pull-right">{{2000 - formData.notes.length}} characters remaining</div>
+				</div>
+				<div class="form-group">
+					<label>Checklist:</label>
+					<div ng-repeat="todo in todos | filter:{optional : 'false'}">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" data-checklist-model="formdata.todoData" data-checklist-value="todo" ng-click="clickTodo(todo)"><span class="todoLabel"> {{todo.docuement}} </span></input>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group" ng-show="checkOptional()">
+					<label>Optional:</label>
+					<div ng-repeat="todo in todos | filter:{optional : 'true'}">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" data-checklist-model="formdata.todoData" data-checklist-value="todo" ng-click="clickTodo(todo)"><span class="todoLabel"> {{todo.docuement}} </span></input>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="attachment_dialog">
+					<div>
+						<ul class="list-group">
+							<li class="list-group-item" ng-repeat="attachment in formData.attachments">
+								{{attachment.name}}<button class="pull-right btn btn-xs btn-danger" ng-disabled="submitFlag" ng-click="removeFile($index)"><i class="glyphicon glyphicon-remove"></i></button>
+							</li>
+						</ul>
+					</div>
+					<span class="btn btn-primary btn-file">
+						Attach Files $[SP] <i class="glyphicon glyphicon-paperclip"></i> <input name="attachments" type="file" multiple="multiple" ng-disabled="submitFlag" onchange="angular.element(this).scope().getFileDetails(this)" ></input>
+					</span>
+				</div>
+				<div class="pull-right">
+					<h5><small>* Required field</small></h5>
+				</div>
+			</div>	
+			<div class="panel-footer">
+				<button class="btn btn-success pull-right navbutton" ng-disabled="stagethree.customerName.$invalid || noAgreementSelected || submitFlag" ng-click="submit()">Submit</button>
+				<button class="btn btn-default pull-left navbutton" ng-click="back()" ng-disabled="submitFlag">Back</button>				
+			</div>			
+		</div>
+	</form>
+</j:jelly>]]></html>
+        <name>Club_Claims_Stage_3</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-08-30 14:21:52</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>95dcf4794f2922001491a50f0310c755</sys_id>
+        <sys_mod_count>228</sys_mod_count>
+        <sys_name>Club_Claims_Stage_3</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ui_page_95dcf4794f2922001491a50f0310c755</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-11-07 16:05:45</sys_updated_on>
+    </sys_ui_page>
+</record_update>

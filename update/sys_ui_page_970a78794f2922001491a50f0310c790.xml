@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>Choose the store you want to submit a claim for&#13;
+Type of Claim&#13;
+Date of the Incident</description>
+        <direct>true</direct>
+        <endpoint>x_aaro2_club_claim_Club_Claims_Stage_1.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<!--Stage 1: Get initial information-->
+	<form name="stageone" novalidate="true">
+		<div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1>Claim Information</h1>
+				</div>
+				<div class="panel-body" >
+					<div class="form-group required" ng-controller="storeListCtrl">
+						<label class="control-label">Store Number: </label>
+						<input type="text" class="form-control" ng-disabled="nextFlag" placeholder="Store Number" ng-model="formData.selectedStore.name" name="storenumber" autocomplete="off" ng-minlength="1"
+							   ng-focus="updateRecordList(formData.selectedStore.name);" ng-change="updateRecordList(formData.selectedStore.name);" required="true" validate-store=''></input>
+						<div class="storeList_popout" ng-show="showNames" click-outside="toggleNames()">
+							<div ng-repeat="store in names" ng-click="updateField(store.name, store.storeName, store.sys_id, store.street, store.city, store.state, store.zip, store.phone, store.manager);">
+								{{ store.name }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group required">
+						<label class="control-label">Type of Claim:</label>
+						<select class="form-control" ng-disabled="nextFlag" name="type" ng-options="type as type.label for type in claimTypes track by type.value" ng-model="formData.claimType" required="true" validate-type=''>
+							<option value="">Please Select</option>
+						</select>
+					</div>
+					<div class="form-group required">
+						<label class="control-label">Date of the Incident:</label>
+						<div class="input-group">
+							<input type="text" class="form-control" ng-disabled="nextFlag" uib-datepicker-popup="{{format}}" ng-model="formData.incidentDate" is-open="popup1.opened" ng-focus="open1()" autocomplete="off"
+								   datepicker-options = "dateOptions" ng-required = "true" close-text="Close" alt-input-formats="altInputFormats" placeholder = "yyyy-mm-dd" readonly = "true">
+							</input>
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open1()"> 
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button>
+							</span>
+						</div>
+					</div>
+					<div class="pull-right">
+						<h5><small>* Required field</small></h5>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-primary pull-right navbutton" ng-disabled="stageone.storenumber.$invalid || stageone.type.$invalid || formData.selectedStore.sys_id == '' || nextFlag" ng-click="next()" >Next</button>
+				</div>
+			</div>
+		</div>	
+	</form>
+</j:jelly>]]></html>
+        <name>Club_Claims_Stage_1</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-08-30 14:12:16</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>970a78794f2922001491a50f0310c790</sys_id>
+        <sys_mod_count>181</sys_mod_count>
+        <sys_name>Club_Claims_Stage_1</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ui_page_970a78794f2922001491a50f0310c790</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-11-04 13:10:19</sys_updated_on>
+    </sys_ui_page>
+</record_update>

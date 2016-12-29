@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>This ui script will send the claim document object into the angular code.&#13;
+To understand the formatting of this UI script you need to read "http://pdfmake.org/#/"</description>
+        <global>false</global>
+        <name>x_aaro2_club_claim.generateClaimDoc</name>
+        <script><![CDATA[var claimDoc = angular.module('claimDoc', []);
+
+claimDoc.factory('claimDocGenerator', function() {
+	return {
+		createClaimDoc : function(formData){
+			
+			//Used to fill out the claim type
+			checkClaimType = function(){
+				if (formData.claimType.label == 'Theft'){
+					return '[ X ] Burglary   [   ] Fire   [   ] Other:Describe:';
+				}else if(formData.claimType.label == 'Fire'){
+					return '[   ] Burglary   [ X ] Fire   [   ] Other:Describe:';
+				}else if(formData.claimType.label != ''){
+					return '[   ] Burglary   [   ] Fire   [ X ] Other:Describe: ' + formData.claimType.label; 
+				}else{
+					return '[   ] Burglary   [   ] Fire   [   ] Other:Describe:';
+				}
+			};
+			
+			// Used to populate the selected merchandise
+			function createItemArray(){
+				var items = []; 
+				var formattedItems = [ 
+										[
+											{
+												text : 'List of Property',
+												colSpan : 4,
+												style : 'tableColumnHeader'
+											},{},{},{}    
+										],
+										[
+											{
+												text : 'Description',
+												colSpan : 2
+											},{},
+											{
+												text : 'Manufacturer',
+												colSpan : 1
+											},
+											{
+												text : 'Model',
+												colSpan : 1
+											}
+										]
+									];
+				var selectedAgreements = formData.agreementData.filter(function(agreement){
+					return agreement.Selected == true;
+				});
+				
+				for (var i = 0; i < selectedAgreements.length; i++){
+					var currentItems = selectedAgreements[i].Items.filter(function(item){
+						return item.Selected == true;
+					});
+					var temp;
+					if (currentItems.length == 0){
+						temp = items.concat(selectedAgreements[i].Items);
+					}else{
+						temp = items.concat(currentItems);
+					}
+					
+					items = temp;
+				}
+				for(var i = 0; i < items.length; i++){
+					formattedItems.push(
+						[
+							{
+								text : items[i].ItemDescription.toString(),
+								style : 'tableField',
+								colSpan : 2
+							},
+							{},
+							{
+								text : items[i].Manufacturer.toString(),
+								style : 'tableField',
+								colSpan : 1
+							},
+							{
+								text : items[i].ModelNumber.toString(),
+								style : 'tableField',
+								colSpan : 1
+							}
+						]
+					);
+				}
+				return formattedItems;
+			};
+			
+			//The entire PDF document definition
+			var dd = {
+
+				//The Content of the form
+				content : [
+					{
+						columns : [
+							{
+								width : '100%',
+								text : 'CLAIM AND WAIVER FORM',
+								style : 'formHeader'
+							}
+						]
+					},
+					{
+						text : 'CUSTOMER CLUB PROGRAM',
+						style : 'formSubHeader',
+						alignment : 'center'
+
+					},
+					{
+						text : [
+							{
+								text : 'Use this claim form for all Leased Property,' +
+									   ' Unemployment and Accidental Death and Dismemberment' +
+									   ' Waivers and Claims. Complete the Store and Customer' + 
+									   ' informa-tion on ALL waivers and  claims.  Then' + 
+									   ' complete  the  appropriate  box  for  type  of' +
+									   ' waiver  or  claim  being  filed.',
+								style : 'formDescription'       
+							},
+							{
+								text : ' ALL  WAIVERS  AND  CLAIMS  MUST  BE  ACCOMPANIED' +
+									   ' WITH:  A  COPY  OF  THE MEMBERSHIP AGREEMENT, A' + 
+									   ' COPY OF THE LEASE AGREEMENT(S) AND A COPY OF THE' + 
+									   ' PAYMENT HISTORY SHOWING CLUB PAYMENTS. SEND CLAIM' +
+									   ' FORM WITH SUPPORT INFORMATION' + 
+									   ' TO:customerservice@benefitmarketingsolutions.com,' + 
+									   ' FAX (405) 579-0534 OR MAIL TO CLAIMS DEPARTMENT,' + 
+									   ' 900 36TH AVE. NW, SUITE 105 NORMAN, OK 73072.' + 
+									   ' FOR QUESTIONS CALL TOLL-FREE 1-888-322-6705.',
+								style : 'boldFormDescription'
+							}
+						]
+					},
+					{
+						table : {
+							headerRows : 1,
+							widths : ['*','*','*','*'],
+
+							body : [
+								[
+									{
+										text : 'Store Information',
+										colSpan : 2,
+										style : 'tableColumnHeader'
+									},
+									{},
+									{
+										text : 'Customer Information',
+										colSpan : 2,
+										style : 'tableColumnHeader'
+									},
+									{}
+								],
+								[
+									{
+										text : (formData.selectedStore.storeName != '') ? 'STORE NAME: \n ' + formData.selectedStore.storeName : 'STORE NAME: \n ',
+										colSpan : 2,
+										style : 'tableField'
+									},
+									{},
+									{
+										text : (formData.selectedCustomer.Client.FirstName && formData.selectedCustomer.Client.LastName) ? 'NAME: \n ' +
+												formData.selectedCustomer.Client.FirstName + ' ' + formData.selectedCustomer.Client.LastName : 'NAME: \n ',
+										colSpan : 2,
+										style : 'tableField'
+									},
+									{}
+								],
+								[
+									{
+										text : (formData.selectedStore.name != '') ? 'STORE NUMBER: \n ' + formData.selectedStore.name : 'STORE NUMBER: \n ',
+										colSpan : 2,
+										style : 'tableField'
+									},
+									{},
+									{
+										text : 'SOCIAL SECURITY NUMBER: \n ',
+										colSpan : 2,
+										style : 'tableField'
+									},
+									{}
+								],
+								[
+									{
+										text : (formData.selectedStore.street != '') ? 'STREET ADDRESS: \n ' + formData.selectedStore.street : 'STREET ADDRESS: \n ',
+										colSpan : 2,
+										style : 'tableField'
+									},
+									{},
+									{
+										text : (formData.selectedCustomer.Address) ? 'STREET ADDRESS: \n ' + formData.selectedCustomer.Address.AddressLine1 +
+												' ' + formData.selectedCustomer.Address.AddressLine2 : 'STREET ADDRESS: \n ',
+										colSpan : 2,
+										style : 'tableField'
+									},
+									{}
+								],
+								[
+									{
+										text : (formData.selectedStore.city != '' && formData.selectedStore.state != '' && formData.selectedStore.zip != '') ?
+												'CITY/STATE/ZIP: \n ' +  formData.selectedStore.city+ ', ' + formData.selectedStore.state + ' ' +
+												formData.selectedStore.zip : 'CITY/STATE/ZIP: \n ',
+										colSpan : 2,
+										style : 'tableField'
+									},
+									{},
+									{
+										text : (formData.selectedCustomer.Address) ? 'CITY/STATE/ZIP: \n ' + formData.selectedCustomer.Address.City +
+												', ' + formData.selectedCustomer.Address.State + ' ' + formData.selectedCustomer.Address.PostalCode : 'CITY/STATE/ZIP: \n ',
+										colSpan : 2,
+										style : 'tableField'
+									},
+									{}
+								],
+								[
+									{
+										text : (formData.selectedStore.manager) ? 'STORE MANAGER: \n ' + formData.selectedStore.manager : 'STORE MANAGER: \n ',
+										colSpan : 2,
+										style : 'tableField'
+									},
+									{},
+									{
+										text : (formData.selectedCustomer.Phone) ? 'DAYTIME PHONE: \n ' + formData.selectedCustomer.Phone.PhoneNumberValue : 'DAYTIME PHONE: \n (          )',
+										colSpan : 2,
+										style : 'tableField'
+									},
+									{}
+								],
+								[
+									{
+										text : (formData.selectedStore.phone) ? 'STORE PHONE: \n ' + formData.selectedStore.phone  : 'STORE PHONE: \n (          )',
+										style : 'tableField'
+									},
+									{
+										text : 'TODAY\'S DATE: \n ' + new Date().toDateString(),
+										style : 'tableField'
+									},
+									{
+										text : 'DATE OF MEMBERSHIP: \n ',
+										style : 'tableField'
+									},
+									{
+										text : (formData.incidentDate) ? 'DATE OF LOSS: \n ' + formData.incidentDate.toDateString() : 'DATE OF LOSS: \n ',
+										style : 'tableField'
+									}
+								],
+							]
+						},
+					},
+					{
+						table : {
+								headerRows : 1,
+								widths : ['*', '*', '*', '*'],
+
+								body : [
+									[
+										{
+											text : 'ITEMS CLAIMED MUST BE LISTED BELOW',
+											style : 'tableColumnHeader',
+											colSpan : 4
+										},{},{},{}
+									],
+									[
+										{
+											text : 'Customer must provide police/fire' + 
+												   ' report; Store must provide a print' + 
+												   ' screen showing original cost of the' + 
+												   ' merchandise and pictures.) ',
+											style : 'formDescription',
+											colSpan : 4
+										},{},{},{}    
+									],
+									[
+										{
+										   text : checkClaimType(),											
+										   style : 'tableField',
+										   colSpan: 4
+										},
+										{},{},{}    
+									],
+									[
+										{
+											text : 'List of Property: See Attached Page with Item List',
+											style : 'tableField',
+											colSpan : 4
+										},
+										{},{},{}    
+									],
+									[
+										{
+											text : 'IF ADDITIONAL SPACE IS NEEDED PLEASE' +
+											' ATTACH A SEPARATE SHEET OR USE A SECOND' + 
+											' CLAIM FORM.',
+											style : 'instructions',
+											colSpan : 2
+										},{},
+										{
+											text : 'TOTAL AMOUNT BEING CLAIMED: \n ' + 
+												   '$',
+											style : 'tableField',
+											colSpan : 2
+										},{}  
+									]
+								]
+						}
+					},
+					{
+						table : {
+							headerRows : 1,
+							widths : ['*', '*', '*', '*'],
+
+							body : [
+								[
+									{
+										text : 'LEASE CANCELLATION / COURTESY WAIVER',
+										style : 'tableColumnHeader',
+										colSpan : 4
+									},{},{},{}
+								],
+								[
+									{
+										text : '(Customer must provide a copy of death certificate)',
+										style : 'formDescription',
+										colSpan : 4
+									 },{},{},{}
+								],
+								[
+									{
+										text : 'DATE OF DEATH: \n ',
+										style : 'tableField',
+										colSpan : 2
+									},
+									{},
+									{
+										text : 'LOCATION: \n ',
+										style : 'tableField',
+										colSpan : 2
+									},
+									{}
+								],
+								[
+									{
+										text : 'CAUSE OF DEATH: \n ',
+										style : 'tableField',
+										colSpan : 2
+									},
+									{},
+									{
+										text : 'BENEFICIARY: \n ',
+										style : 'tableField',
+										colSpan : 2
+									},
+									{}
+								],
+								[
+									{
+										text : 'BENEFICIARY\'S CURRENT ADDRESS, CITY, STATE, ZIP: \n ',
+										style : 'tableField',
+										colSpan : 4
+									},
+									{},
+									{},
+									{}
+								],
+								[
+									{
+										text : 'BRIEFLY DESCRIBE CIRCUMSTANCES OF ACCIDENT: \n ',
+										style : 'tableField',
+										colSpan : 4
+									},
+									{},
+									{},
+									{}
+								]
+							]
+						}
+					},
+					{
+						table : {
+							widths : ['*', '*', '*', '*'],
+
+							body : [
+								[
+									{
+										text : 'INVOLUNTARY UNEMPLOYMENT WAIVER OF CLAIM /' +
+											   ' ACCIDENT & SICKNESS WAIVER',
+										style : 'tableColumnHeader',
+										colSpan : 4
+									},
+									{},
+									{},
+									{}
+								],
+								[
+									{
+										text : [
+											{
+											   text : '(Unemployment: Customer must provide' + 
+													  ' verification of loss from former employer' + 
+													  ' and proof of registration with state' + 
+													  ' unemployment office.) (Accident/Sickness:' + 
+													  ' Customer must provide letter from employer' + 
+													  ' and statement from physican indicating' + 
+													  ' length of time out of work.)',
+											   style : 'formDescription'
+											},
+											{
+											   text : 'UNEMPLOYMENT BENEFITS ARE REPORTED TO THE' + 
+													  ' INTERNAL REVENUE SERVICE (IRS) FOR TAX' + 
+													  ' PURPOSES. INCOME TAX IS NOT WITHHELD FROM' + 
+													  ' YOUR UNEMPLOYMENT BENEFITS. CONTACT THE' + 
+													  ' IRS FOR ADDITIONAL INFORMATION.' + 
+													  ' 1099 FORMS ARE MAILED IN JANUARY.',
+											   style : 'boldFormDescription'
+											}
+										],
+										colSpan : 4
+									},
+									{},
+									{},
+									{}    
+								],
+								[
+									{
+										text : [
+												   {
+													   text : '1A. Unemployment Waiver/Claim: How did' +
+															  ' unemployment occur?     [   ] Laid Off' + 
+															  '   [   ] Fired   [   ] Strike   [   ]' + 
+															  ' Other \n',
+													   style : 'tableField'
+												   },
+												   {
+													   text : '(Disability is covered under Accident/Sickness.' + 
+															  ' Must be continuously unemployed for 30 days.) \n',
+													   style : 'boldFormDescription'
+												   },
+												   {
+													   text : 'If other, please explain:',
+													   style : 'tableField'
+												   }
+											   ],
+										style : 'tableField',
+										colSpan : 4
+									},
+									{},
+									{},
+									{}   
+								],
+								[
+									{
+										text : [
+												   {
+													   text : '1B. Accident/Sickness Waiver/Claim:' + 
+															  ' How did unemployment occur?     [   ] Sickness' + 
+															  '   [   ] Injury    [   ]' + 
+															  ' Other \n',
+													   style : 'tableField'
+												   },
+												   {
+													   text : '(Disability is covered under Accident/Sickness.' + 
+															  ' Must be continuously unemployed for 30 days.) \n',
+													   style : 'boldFormDescription'
+												   },
+												   {
+													   text : 'If other, please explain:',
+													   style : 'tableField'
+												   }
+											   ],
+										style : 'tableField',
+										colSpan : 4
+									},
+									{},
+									{},
+									{}   
+								],
+								[
+									{
+										text : [
+												   {
+													   text : '1C. Have you visited your physician:' + 
+															  ' How did unemployment occur?     [   ] Yes' + 
+															  '   [   ] No    Date of visit:\n',
+													   style : 'tableField'
+												   }
+											   ],
+										style : 'tableField',
+										colSpan : 4
+									},
+									{},
+									{},
+									{}   
+								],
+								[
+									{
+										text : [
+												   {
+													   text : '2. List the Name, Address and Phone Number' +
+															  ' of all Previous Employers for the past 6' + 
+															  ' months and the length of time employed' + 
+															  ' there \n ________________________________' +
+															  '__________________________________________' +
+															  '___________________________________________' + 
+															  '______________\n ',
+													   style : 'tableField'
+												   }
+											   ],
+										style : 'tableField',
+										colSpan : 4
+									},
+									{},
+									{},
+									{}   
+								],
+								[
+									{
+										text : [
+												   {
+													   text : 'Unemployment Waiver/Claim: Have you registered with State Unemployment Office or Agency?     [   ] Yes     [   ] No  ' + 
+															  '\nDate Registered: __________________________________',
+													   style : 'tableField'
+												   },
+												   {
+													   text : '\nFor both Involuntary Unemployment and Accident / Sickness member must be continuously employed for 6 months at a minimum of 30 hours per week',
+													   style : 'formDescription'
+												   },
+
+											   ],
+										style : 'tableField',
+										colSpan : 4
+									},
+									{},
+									{},
+									{}   
+								],
+								[
+									{
+										text : [
+												   {
+													   text : 'Date you expect to become employed or return to work:',
+													   style : 'tableField'
+												   },
+											   ],
+										style : 'tableField',
+										colSpan : 4
+									},
+									{},
+									{},
+									{}   
+								],
+							]
+						 }
+					},
+					{
+						 table : {
+							headerRows : 1,
+							widths : ['*', '*', '*','*'],
+
+							body : [
+								[
+									{
+										text : 'CUSTOMER WARNING AND SIGNATURE',
+										colSpan : 4,
+										style : 'tableColumnHeader'
+									},
+									{},
+									{},
+									{}    
+								],
+								[
+									{
+										text : 'CUSTOMER WARNING (FOR INSURANCE CLAIMS ONLY):' + 
+											   ' ANY PERSON WHO KNOWINGLY AND WITH INTENT TO' + 
+											   ' DEFRAUD ANY INSURANCE COMPANY OR OTHER PERSON' + 
+											   ' FILES AN APPLICATION FOR INSURANCE OR' + 
+											   ' STATEMENT OF CLAIM CONTAINING ANY MATERIALLY' + 
+											   ' FALSE INFORMATION OR CONCEALS, FOR THE' + 
+											   ' PURPOSE OF MISLEADING, INFORMATION' + 
+											   ' CONCERNING ANY FACT MATERIAL THERETO, COMMITS' + 
+											   ' A FRAUDULENT INSURANCE ACT, WHICH IS A CRIME,' + 
+											   ' AND MAY SUBJECT SUCH PERSON TO CRIMINAL AND' + 
+											   ' SUBSTANTIAL CIVIL PENALTIES. FOR STATE SPECIFIC' + 
+											   ' FRAUD STATEMENTS SEE REVERSE SIDE OF THIS FORM.',
+										style : 'boldFormDescription',
+										colSpan : 4
+									},
+									{},
+									{},
+									{}
+								],
+								[
+									{
+										text : 'Customer Signature: \n ',
+										style : 'tableField',
+										colSpan : 3
+									},
+									{},
+									{},
+									{
+										text : 'Date: \n ',
+										style : 'tableField',
+										colSpan : 1
+									},
+								]
+							]
+						 }
+					},
+					{
+					table : {
+							headerRows : 1,
+							widths : ['*'],
+
+							body : [
+								[
+									{
+										text : 'UNEMPLOYMENT CLAIM - CONTINUED',
+										style : 'tableColumnHeader'
+									}
+								],
+								[
+									{
+										text : [
+										   {
+												text : 'Certification For Unemployment Claims (For Insurance Claims Only)',
+												style : 'boldFormDescription'
+										   },
+										   {
+												text : ' - Under penalties of perjury, I certify that: \n' + 
+												' (1) The number shown on this form is my correct taxpayer' + 
+												' identification/social security number (or I am waiting' + 
+												' for a number to be issued to me); and \n (2) I am not' + 
+												' subject to backup withholding because: (a) I am exempt' + 
+												' from backup withholding, or (b) I have not been' + 
+												' notified by the Internal Revenue Service (IRS) that I' + 
+												' am subject to backup withholding as a result of a' + 
+												' failure to report all interest or dividends, or (c)' + 
+												' the IRS has notified me that I am no longer subject' + 
+												' to backup withholding.\n The Internal Revenue Service' + 
+												' does not require your consent to any provision of' + 
+												' this document other than the certifications required' + 
+												' to avoid backup withholding.\n Certification' + 
+												' Instructions - You must cross out item (2) above if' + 
+												' you have been notified by the IRS that you are' + 
+												' currently subject to backup withholding because of' + 
+												' under-reporting interest or dividends on your tax return.' + 
+												' For real estate transactions, item (2) does not apply.For' + 
+												' mortgage interest paid, the acquisition or abandonment of' + 
+												' secured property, contributions to an individual' + 
+												' retirement arrangement (IRA), and generally payments' + 
+												' other than interest and dividends, you are not' + 
+												' required to sign the Certification, but you must' + 
+												' provide your correct TIN. ( Also see ',
+												style : 'formDescription'
+										   },
+										   {
+												text : ' Signing the Certification under Specific Instructions.',
+												italics : true,
+												style : 'formDescription'
+										   },
+										   {
+											   text : ') Instructions will be mailed upon request.',
+											   style : 'formDescription'
+										   }
+										],
+									}
+								]
+							]
+						}
+					},
+					 {
+						text : [
+						   {
+								text : '\n CA residents only: ',
+								style : 'boldFormDescription'
+						   },
+						   {
+							   text :  'For your protection California law requires the' + 
+									   ' following to appear on this form: Any person who' +
+									   ' knowingly presents a false or fraudulent claim' + 
+									   ' for the payment of a loss is guilty of a crime' + 
+									   ' and may be subject to fines and confinement in' + 
+									   ' state prison. \n\n',
+								style : 'formDescription'
+						   },
+						   {
+								text : 'CO residents only: ',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : ' It is unlawful to knowingly provide false,' + 
+									   ' incomplete, or misleading facts or information to' +
+									   ' an insurance company for the purpose of' + 
+									   ' defrauding or attempting to defraud the company.' +
+									   ' Penalties may include imprisonment, fines, denial' + 
+									   ' of insurance, and civil damages. Any insurance' + 
+									   ' company or agent of an insurance company who' + 
+									   ' knowingly provides false, incomplete, or' + 
+									   ' misleading facts or information to a policyholder' +
+									   ' or claimant for the purpose of defrauding or' + 
+									   ' attempting to defraud the policyholder or' + 
+									   ' claimant with regard to a settlement or award' + 
+									   ' payable from insurance proceeds shall be' + 
+									   ' reported to the Colorado division of' + 
+									   ' insurance within the department of regulatory' + 
+									   ' agencies \n\n',
+								style : 'formDescription'
+						   },
+						   {
+								text : 'DC residents only: WARNING: ',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : 'It is a crime to provide false or misleading' + 
+									   ' information to an insurer for the purpose of' + 
+									   ' defrauding the insurer or any other person.' + 
+									   ' Penalties include imprisonment and/or fines.' + 
+									   ' In addition, an insurer may deny insurance' + 
+									   ' benefits if false information materially related' + 
+									   ' to a claim was provided by the applicant. \n\n',
+								style : 'formDescription'
+						   },
+						   {
+								text : 'FL residents only: ',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : 'Any person who knowingly and with intent to' + 
+									   ' injure, defraud, or deceive any insurer files a' + 
+									   ' statement of claim or an application containing' + 
+									   ' any false, incomplete, or misleading information' + 
+									   ' is guilty of a felony of the third degree. \n\n',
+								style : 'formDescription'
+						   },
+						   {
+								text : 'KY residents only: ',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : 'Any person who knowingly and with intent to' + 
+									   ' defraud any insurance company, or other person' + 
+									   ' files a claim for insurance containing any' + 
+									   ' materially false information or conceals, for' + 
+									   ' the purpose of misleading, information' + 
+									   ' concerning any fact material thereto commits a' + 
+									   ' fraudulent insurance act, which is a crime.',
+								style : 'formDescription'
+						   },
+						   {
+								text : 'HIGH LIMIT AD – ',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : 'No statements made by the applicant may be' + 
+									   ' changed without his written consent. \n\n',
+								style : 'formDescription'
+						   },
+						   {
+								text : 'NJ residents only: ',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : 'Any person who knowingly files a statement of' + 
+									   ' claim containing any false or misleading' + 
+									   ' information is subject to criminal and civil' + 
+									   ' penalties. \n\n',
+								style : 'formDescription'
+						   },
+						   {
+								text : 'NM residents only: ',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : 'Any person who knowingly presents a false or' + 
+									   ' fraudulent claim for payment of a loss or benefit' +
+									   ' or knowingly presents false information in an' + 
+									   ' application for insurance is guilty of a crime' + 
+									   ' and may be subject to civil fines and criminal' + 
+									   ' penalties. \n\n',
+								style : 'formDescription'
+						   },
+						   {
+								text : 'OK residents only: WARNING: ',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : 'Any person who knowingly, and with intent to' + 
+									   ' injure, defraud or deceive any insurer, makes' + 
+									   ' any claim for the proceeds of an insurance' + 
+									   ' policy containing any false, incomplete or' + 
+									   ' misleading information is guilty of a felony. \n\n',
+								style : 'formDescription'
+						   },
+						   {
+								text : 'TX residents only: ',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : 'Any person who knowingly presents a false or' + 
+									   ' fraudulent claim for the payment of a loss is' + 
+									   ' guilty of a crime and may be subject to fines' + 
+									   ' and confinement in state prison.\n\n',
+								style : 'formDescription'
+						   },
+						   {
+								text : 'VA residents only: *This notice is not applicable' + 
+									   ' to life and health insurance. \n\n',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : 'WA residents only: ',
+								style : 'boldFormDescription'
+						   },
+						   {
+								text : 'It is a crime to knowingly provide false,' + 
+									   ' incomplete, or misleading information to an' + 
+									   ' insurance company for the purpose of defrauding' + 
+									   ' the company. Penalties include imprisonment,' + 
+									   ' fines, and denial of insurance benefits.',
+								style : 'formDescription'
+						   },
+						],
+
+						pageBreak : 'after'
+					},
+					{
+						 table : {
+							headerRows : 2,
+							widths : ['*', '*', '*','*'],
+
+							body : 	createItemArray()
+						 }
+					}
+				],
+				//Style classes used in content for repititive styling
+				styles : {
+					formHeader : {
+						alignment : 'center',
+						bold : true,
+						fontSize : 18
+					},
+
+					formSubHeader : {
+						bold : true,
+						fontSize : 14
+					},
+
+					formDescription : {
+						fontSize : 6.5
+					},
+
+					boldFormDescription : {
+						bold : true,
+						fontSize : 7.3
+					},
+
+					tableColumnHeader : {
+						bold : true,
+						fillColor : 'black',
+						color : 'white',
+						alignment : 'center'
+					},
+
+					tableField : {
+						fontSize : 9
+					},
+
+					instructions : {
+						fontSize : 10,
+						alignment : 'center'
+					},
+
+					calloutInstructions : {
+						fontSize : 12,
+						alignment : 'center',
+						bold : true
+					}
+				},
+
+				pageMargins : 20
+
+			};
+			
+			return dd;
+			
+		}
+	};
+});]]></script>
+        <script_name>generateClaimDoc</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>xxschowell</sys_created_by>
+        <sys_created_on>2016-10-20 19:54:50</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>68d1f8964fe262003ad149cf0310c7e1</sys_id>
+        <sys_mod_count>45</sys_mod_count>
+        <sys_name>x_aaro2_club_claim.generateClaimDoc</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ui_script_68d1f8964fe262003ad149cf0310c7e1</sys_update_name>
+        <sys_updated_by>xxschowell</sys_updated_by>
+        <sys_updated_on>2016-10-24 19:24:11</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

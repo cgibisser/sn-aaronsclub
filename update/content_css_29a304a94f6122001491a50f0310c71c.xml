@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="content_css">
+    <content_css action="INSERT_OR_UPDATE">
+        <name>Custom_CSS</name>
+        <style>body {&#13;
+   padding: 0px !important;&#13;
+   min-height: 5000px;&#13;
+        background: url(noc_background_header.pngx) no-repeat scroll center top/100% #e5e5e5;&#13;
+}&#13;
+.content {&#13;
+    padding-top: 25px;&#13;
+    min-height: 5000px;&#13;
+    margin-bottom: 1px;&#13;
+}&#13;
+.panel-footer {&#13;
+    height: 50px;&#13;
+}&#13;
+textarea {&#13;
+    resize: none;&#13;
+}&#13;
+h1 {&#13;
+    font-size: 18px;&#13;
+    color: #001DA2;&#13;
+}&#13;
+.storeList_popout {&#13;
+    position: absolute;&#13;
+    z-index: 10;&#13;
+    width: 69.5%;&#13;
+    background-color: #fff;&#13;
+    border: 1px solid #bdc0c4;&#13;
+}&#13;
+.storeList_popout div {&#13;
+    width: 100%;&#13;
+}&#13;
+.storeList_popout div:hover {&#13;
+    background-color: #278efc;&#13;
+    color: #fff;&#13;
+}&#13;
+.uib-datepicker-popup .btn-group .btn-danger.btn{&#13;
+    display: none;&#13;
+}&#13;
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {&#13;
+    background-color: pink;&#13;
+}&#13;
+.btn-file {&#13;
+    position: relative;&#13;
+    overflow: hidden;&#13;
+}&#13;
+.btn-file input[type=file] {&#13;
+    position: absolute;&#13;
+    top: 0;&#13;
+    right: 0;&#13;
+    min-width: 100%;&#13;
+    min-height: 100%;&#13;
+    font-size: 100px;&#13;
+    text-align: right;&#13;
+    filter: alpha(opacity=0);&#13;
+    opacity: 0;&#13;
+    outline: none;&#13;
+    background: white;&#13;
+    cursor: inherit;&#13;
+    display: block;&#13;
+}&#13;
+.form-group.required .control-label:after {&#13;
+  content:"*";&#13;
+  color:red;&#13;
+}&#13;
+.attachment_dialog {&#13;
+     padding-top: 15px;&#13;
+}&#13;
+.attachment_dialog div {&#13;
+    max-height: 200px;&#13;
+    overflow-y: auto;&#13;
+}&#13;
+.spacer{&#13;
+    height: 250px;&#13;
+}&#13;
+&#13;
+.panel{&#13;
+    max-width: 990px;&#13;
+    margin-left: auto;&#13;
+    margin-right: auto;&#13;
+}&#13;
+&#13;
+.panel_highlight{&#13;
+      border: 1px solid #66afe9;&#13;
+      webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);&#13;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);&#13;
+}&#13;
+&#13;
+.alert{&#13;
+    padding: 15px;&#13;
+    margin-bottom: 20px;&#13;
+    border: 1px solid rgba(0, 0, 0, 0);&#13;
+    border-radius: 4px;&#13;
+    display: block;&#13;
+     float: none;&#13;
+    width: 100%;&#13;
+    height: auto;&#13;
+    position: none;&#13;
+    overflow: none;&#13;
+}&#13;
+input[type=radio] {&#13;
+    width: 30px;&#13;
+}&#13;
+&#13;
+.select_buttons{&#13;
+    padding-top: 40px;&#13;
+}&#13;
+.select_buttons button{&#13;
+    overflow: hidden;&#13;
+    white-space: nowrap;&#13;
+    text-overflow: ellipsis;&#13;
+}&#13;
+.btn:focus {&#13;
+  outline: none;&#13;
+  background-color: #fff;&#13;
+}&#13;
+span.todoLabel.ng-binding {&#13;
+   line-height: 21.5px;&#13;
+}&#13;
+&#13;
+ .checkbox {&#13;
+    margin-top: 0px !important;&#13;
+}</style>
+        <sys_class_name>content_css</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-08-29 15:33:12</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>29a304a94f6122001491a50f0310c71c</sys_id>
+        <sys_mod_count>97</sys_mod_count>
+        <sys_name>Custom_CSS</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>content_css_29a304a94f6122001491a50f0310c71c</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-11-07 15:55:28</sys_updated_on>
+        <type>local</type>
+        <u_description>To include in your page:&#13;
+&lt;link href="29a304a94f6122001491a50f0310c71c.cssdbx" rel="stylesheet" type="text/css"&gt;&lt;/link&gt;</u_description>
+        <url/>
+    </content_css>
+</record_update>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Club Claims">b1cfb3804f21a6001491a50f0310c7cf</application>
+        <assessment/>
+        <content_page/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>My Store's Claims</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_aaro2_club_claim_claim</name>
+        <order>200</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query>&amp;sysparm_fixed_query=company.name=javascript:getUserCompany()^ORcompany.parent.name=javascript:getUserCompany()^ORcompany.parent.parent.name=javascript:getUserCompany()^ORcompany.parent.parent.parent.name=javascript:getUserCompany()^ORcompany.parent.parent.parent.parent.name=javascript:getUserCompany()</query>
+        <report/>
+        <roles/>
+        <survey/>
+        <survey_overwrite>true</survey_overwrite>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>xxpgrupe</sys_created_by>
+        <sys_created_on>2016-09-06 16:11:53</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>07b889c84f71e2001491a50f0310c7d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Store's Claims</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_app_module_07b889c84f71e2001491a50f0310c7d1</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-09-06 16:11:53</sys_updated_on>
+        <timeline_page/>
+        <title>My Store's Claims</title>
+        <u_description/>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>This pages includes the searching for customer name or agreement number. </description>
+        <direct>true</direct>
+        <endpoint>x_aaro2_club_claim_Club_Claims_Stage_2.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<!-- Importing all import files -->
+	<g:requires name="x_aaro2_club_claim.jQuery_v3_1_0.jsdbx" />
+	<g:requires name="x_aaro2_club_claim.Bootstrap_Min_v3_3_7.jsdbx" />
+	<g:requires name="x_aaro2_club_claim.UI_Bootstrap_v2_1_3.jsdbx" />
+	<link href="7b2963d14f6122001491a50f0310c7b7.cssdbx" rel="stylesheet" type="text/css"></link>
+	<link href="29a304a94f6122001491a50f0310c71c.cssdbx" rel="stylesheet" type="text/css"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>	
+
+	<!--Stage 2 Information to use to pull back agreements and items-->
+	<form name="stagetwo" novalidate="true">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h1>What would you like to use to look up the customer?</h1>
+			</div>
+			<div class="panel-body">
+				<div class="alert alert-danger" ng-show="error" ng-bind-html="errorText"></div>
+				<div class="form-horizontal">
+					<div class="panel panel-default" ng-class="{panel_highlight : formData.lookupChoice == 'nameLookup'}"  ng-click="updateChoiceSelection('nameLookup')">
+						<div class="panel-body">
+							<div class="radio">
+								<div class="col-xs-1">
+									<input type="radio" name="searchType" value="nameLookup" ng-disabled="searchFlag" ng-model="formData.lookupChoice" ng-change="updateChoiceSelection('nameLookup')"></input>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-xs-3">First Name</label>
+									<div class="col-xs-7">
+										<input class="form-control" name="customerFirstName" ng-disabled="searchFlag" type="text" ng-model="formData.lookUpFirstName" ng-focus="updateChoiceSelection('nameLookup');" required="true"></input>
+									</div>						
+								</div>
+								<div class="col-xs-1"></div>
+								<div class="form-group">
+									<label class="control-label col-xs-3">Last Name</label>
+									<div class="col-xs-7">
+										<input class="form-control" name="customerLastName" ng-disabled="searchFlag" type="text" ng-model="formData.lookUpLastName" ng-focus="updateChoiceSelection('nameLookup');" required="true"></input>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>			
+				</div>
+				<div class="form-horizontal">
+					<div class="panel panel-default" ng-class="{panel_highlight : formData.lookupChoice == 'agreementLookup'}"  ng-click="updateChoiceSelection('agreementLookup')">
+						<div class="panel-body">
+							<div class="radio">
+								<div class="col-xs-1">
+									<input type="radio" name="searchType" value="agreementLookup" ng-disabled="searchFlag" ng-model="formData.lookupChoice" ng-change="updateChoiceSelection('agreementLookup')"></input>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-xs-3">Lease Agreement Number</label>
+									<div class="col-xs-7">
+										<input class="form-control" name="agreementNumber" ng-disabled="searchFlag" type="text" ng-model="formData.lookUpAgreement" ng-focus="updateChoiceSelection('agreementLookup');" required="true"></input>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>		
+			</div>
+			<div class="panel-footer">
+				<button class="btn btn-primary pull-right navbutton" ng-disabled="searchButtonText == 'Search' || (stagetwo.agreementNumber.$invalid ${AND} formData.lookupChoice=='agreementLookup') || ((stagetwo.customerFirstName.$invalid || stagetwo.customerLastName.$invalid) ${AND} formData.lookupChoice=='nameLookup') || searchFlag" ng-click="next()">{{searchButtonText}}</button>
+				<button class="btn btn-default pull-left navbutton" ng-click="back()" ng-disabled="searchFlag">Back</button>
+			</div>		
+		</div>
+	</form>
+</j:jelly>]]></html>
+        <name>Club_Claims_Stage_2</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-08-30 14:20:15</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>2b4c70b94f2922001491a50f0310c782</sys_id>
+        <sys_mod_count>70</sys_mod_count>
+        <sys_name>Club_Claims_Stage_2</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ui_page_2b4c70b94f2922001491a50f0310c782</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-10-13 13:13:44</sys_updated_on>
+    </sys_ui_page>
+</record_update>

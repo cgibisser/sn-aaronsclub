@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>catalog</category>
+        <client_script/>
+        <description>The form that the store fills out to submit a Club Claim</description>
+        <direct>false</direct>
+        <endpoint>x_aaro2_club_claim_Club Claims Form.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<!-- Load libraries -->
+	<g:requires name="x_aaro2_club_claim.jQuery_v3_1_0.jsdbx" />
+	<g:requires name="x_aaro2_club_claim.Bootstrap_Min_v3_3_7.jsdbx" />
+	<g:requires name="x_aaro2_club_claim.UI_Bootstrap_v2_1_3.jsdbx" />
+	<g:requires name="x_aaro2_club_claim.angular_click_outside.jsdbx" />
+	<g:requires name="x_aaro2_club_claim.loading_bar_min.jsdbx" />
+	<g:requires name="x_aaro2_club_claim.pdfmake.jsdbx" />
+	<g:requires name="x_aaro2_club_claim.vfs_fonts.jsdbx" />
+	<g:requires name="x_aaro2_club_claim.generateClaimDoc.jsdbx" />
+	<link href="7b2963d14f6122001491a50f0310c7b7.cssdbx" rel="stylesheet" type="text/css"></link>
+	<link href="29a304a94f6122001491a50f0310c71c.cssdbx" rel="stylesheet" type="text/css"></link>
+	<link href="bb74d11a4fb1a6001491a50f0310c732.cssdbx" rel="stylesheet" type="text/css"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>	
+	
+	<script>
+		(function() {
+			var claimApp = angular.module("claimApp", ["ngRoute", "ui.bootstrap", "angular-click-outside", "angular-loading-bar", "claimDoc"]);
+		
+			claimApp.config(function($routeProvider) {
+				$routeProvider
+				.when("/", {
+					templateUrl : "x_aaro2_club_claim_Club_Claims_Stage_1.do",
+					controller : "stageOneCtrl as stageone"
+				})
+				.when("/stagetwo", {
+					templateUrl : "x_aaro2_club_claim_Club_Claims_Stage_2.do",
+					controller : "stageTwoCtrl as stagetwo"
+				})
+				.when("/stagethree", {
+					templateUrl : "x_aaro2_club_claim_Club_Claims_Stage_3.do",
+					controller : "stageThreeCtrl as stagethree"
+				})
+				.when("/submitted", {
+					templateUrl : "x_aaro2_club_claim_Club_Claims_Submitted.do",
+					controller: "submittedCtrl"
+				})		
+				.otherwise({
+					redirectTo : "/"
+				});
+			});
+		
+			//used to validate if a valid store is selected
+			claimApp.directive('validateStore',	function checkValidStore(utils, $http) {
+				return {
+					require : 'ngModel',
+					link : function(scope, element, attr, ctrl){
+						function validStore(ngModelValue){
+							var store = ngModelValue;
+							utils.getStoreList(store).then(function(response){
+								if (response.data.result.length == 1){
+									ctrl.$setValidity('validStore', true);
+								}else{
+									ctrl.$setValidity('validStore', false);
+								}
+							});
+							return store;
+						}
+						ctrl.$parsers.push(validStore);
+					}
+				}
+			});
+		
+			//used to validate if claim type was answered on the form
+			claimApp.directive('validateType',	function checkValidType() {
+				return {
+					require : 'ngModel',
+					link : function(scope, element, attr, ctrl){
+						function validType(ngModelValue){
+							var type = ngModelValue;
+							if (type != ''){
+								ctrl.$setValidity('validType', true);
+							}else{
+								ctrl.$setValidity('validType', false);
+							}
+							return type;
+						}
+						ctrl.$parsers.push(validType);
+					}
+				}
+			});		
+				
+			//used to validate if a customer is selected on the final page
+			claimApp.directive('validateCustomer',	function checkValidCustomer() {
+				return {
+					require : 'ngModel',
+					link : function(scope, element, attr, ctrl){
+						function validCustomer(ngModelValue){
+							var customer = ngModelValue;
+							if (customer != ''){
+								ctrl.$setValidity('validCustomer', true);
+							}else{
+								ctrl.$setValidity('validCustomer', false);
+							}
+							return customer;
+						}
+						ctrl.$parsers.push(validCustomer);
+					}
+				}
+			});	
+		
+			claimApp.factory("formData", function(){
+		
+				return formData = {
+					stores : [],     //the array of stores returned by getStores service
+					claimType : "",  //the selected claim type
+					incidentDate : '',
+					selectedStore : {name : "", storeName : "", sys_id : "", street : "", city : "",  state : "",  zip : "", phone : "", manager : ""},
+					notes : "",         //store "description of claim"
+					recordNumber : "",   
+					attachments : [],
+					attachRecord : "",
+					lookUpFirstName : "",  //customer first name entered on form
+					lookUpLastName : "",   //customer last name entered on form
+					selectedCustomer : "", //contains customer object after lookup
+					lookUpAgreement : "",  //agreement entered when searching by agreement
+					customerList : [],     //all the customer object results when searching by name
+					lookupChoice : "",     //holds search by choice: "nameLookup" or "agreementLookup"
+					agreementData : [],    //all the customer's agreements
+					agreementChoices : [],  //all the highlighted agreements
+					itemChoices : [],       //all the highlighted items
+					sys_id : '',            //Sys_id of created record
+					todoData : []
+ 				};
+			});
+
+			claimApp.factory('utils', ['$http', function($http) {
+				return {
+					getClaimTypes : function(){
+						return $http({
+							method : 'GET',
+							url : '/api/x_aaro2_club_claim/v1/utils/getClaimTypes',
+							headers : {
+								'X-UserToken' : g_ck //the global page variable storing the user token
+							}
+						});
+					},
+		
+					getClaimTodos : function(subType){
+						return $http({
+							method : 'GET',
+							url : '/api/x_aaro2_club_claim/v1/utils/getDocuments?subType=' + subType,
+							headers : {
+								'X-UserToken' : g_ck //the global page variable storing the user token
+							}
+						});
+					},
+		
+					getCustomerListByName : function(firstName, lastName, store){
+						return $http({
+							method : 'POST',
+							url : '/api/x_aaro2_club_claim/v1/utils/getCustomerListByName',
+							headers : {
+								'X-UserToken' : g_ck //the global page variable storing the user token
+							},
+							data : {
+								"FirstName": firstName,
+								"LastName": lastName,
+								"Store": store
+							}
+						});
+					},
+		
+					getCustomerListByAgreement : function(agreement, store){
+						return $http({
+							method : 'POST',
+							url : '/api/x_aaro2_club_claim/v1/utils/getCustomerListByAgreement',
+							headers : {
+								'X-UserToken' : g_ck //the global page variable storing the user token
+							},
+							data : {
+								"AgreementNumber": agreement,
+								"Store": store
+							}
+						});
+					},
+				
+					getStoreList : function(storeNumber){
+						return $http({
+							method : 'GET',
+							url : '/api/x_aaro2_club_claim/v1/utils?storeNumber=' + storeNumber,
+							headers : {
+								'X-UserToken' : g_ck //the global page variable storing the user token
+							}
+						});
+					},	
+		
+					getAgreementList : function(clientid){
+						return $http({
+							method : 'GET',
+							url : '/api/x_aaro2_club_claim/v1/utils/getAgreements?ClientId=' + clientid,
+							headers : {
+								'X-UserToken' : g_ck //the global page variable storing the user token
+							}
+						}).then(function(response){
+							//Remap object params and include a selected param
+							return response.data.result.map(function(obj){
+								var rObj = {};
+		
+								rObj["AgreementId"] = obj.AgreementId;
+								rObj["ClientId"] = obj.ClientId;
+								rObj["Store"] = obj.Store;
+								rObj["AgreementNumber"] = obj.AgreementNumber;
+								rObj["AgreementStatusId"] = obj.AgreementStatusId;
+								rObj["AgreementStatusName"] = obj.AgreementStatusName;
+								rObj["AgreementTypeId"] = obj.AgreementTypeId;
+								rObj["AgreementTypeName"] = obj.AgreementTypeName;
+								rObj["EstimatedAgreementValue"] = obj.EstimatedAgreementValue;
+								rObj["EstimatedRetailAmount"] = obj.EstimatedRetailAmount;
+								rObj["LeaseFrequencyId"] = obj.LeaseFrequencyId;
+								rObj["LeaseFrequencyName"] = obj.LeaseFrequencyName;
+								rObj["LeaseTerm"] = obj.LeaseTerm;
+								rObj["CurrentLeasePayment"] = obj.CurrentLeasePayment;
+								rObj["Balance"] = obj.Balance;
+								rObj["AmountPaidToDate"] = obj.AmountPaidToDate;
+								rObj["StartDate"] = obj.StartDate;
+								rObj["PaidThroughDate"] = obj.PaidThroughDate;
+								rObj["Items"] = mapItems(obj.Items);
+								rObj["Payments"] = obj.Payments;
+								rObj["Selected"] = false;
+								return rObj;
+		
+								function mapItems(Items){
+									var itemArray = [];
+									for (var i = 0; i != Items.length; i++) {
+										itemArray.push({
+											"ModelNumber" : Items[i].ModelNumber,
+											"AgreementItemId" : Items[i].AgreementItemId,
+											"EstimatedAgreementItemValue" : Items[i].EstimatedAgreementItemValue,
+											"AgreementId" : Items[i].AgreementId,
+											"ItemNumber" : Items[i].ItemNumber,
+											"CurrentItemLeasePayment" : Items[i].CurrentItemLeasePayment,
+											"SerialNumber" : Items[i].SerialNumber,
+											"EstimatedRetailItemAmount" : Items[i].EstimatedRetailItemAmount,
+											"Manufacturer" : Items[i].Manufacturer,
+											"SKU" : Items[i].SKU,
+											"ItemDescription" : Items[i].ItemDescription,
+											"Selected" : false
+										});
+									}
+									return itemArray;
+								}
+							});
+						});
+					},		
+		
+					submit : function(recordData, agreementsData, todoData) {
+						return $http({
+							method : 'POST',
+							url : '/api/x_aaro2_club_claim/v1/utils',
+							headers : {
+								'X-UserToken': g_ck,  // g_ck is the global page variable storing the user token
+							},
+							data : { 
+								record : recordData,
+								agreements : agreementsData,
+								todos : todoData
+							}
+						});
+					} //end of submit function	
+				};  
+			}]);
+		
+			claimApp.factory('claimTypes', ['$q', '$http', 'utils', function($q, $http, utils){
+				this.types = [];
+				var defer = $q.defer();
+				function handleSuccess(response, status){
+					defer.resolve(response.result);
+				}
+				utils.getClaimTypes().success(handleSuccess);
+				this.types = defer.promise;
+				return this.types;
+			}]);
+		
+		
+	/*************************************** STAGE 1 ***************************************************/	
+		
+			claimApp.controller("stageOneCtrl", ["$scope", "$http", "formData", "utils", "$location", "claimTypes",
+					function($scope, $http, formData, utils, $location, claimTypes){
+				$scope.formData = formData;
+				$scope.nextFlag = false;  //used for disabling fields after Next button is clicked
+		
+				//Get Claim Types
+				claimTypes.then(function(data) {
+					$scope.claimTypes = data;
+				});
+				
+				var today = new Date();
+				//Set Date if empty
+				if ($scope.formData.incidentDate == ""){
+					$scope.formData.incidentDate = today;
+				}
+		
+				/////////////For the date picker//////////////
+				$scope.inlineOptions = {
+					maxDate : today,
+					showWeeks : true
+				};
+				$scope.dateOptions = {
+					formatYear : 'yy',
+					maxDate : today,
+					startingDay : 1
+				};
+				$scope.open1 = function(){
+					$scope.popup1.opened = true;
+				};
+				$scope.setDate = function(year, month, day){
+					var setDate = new Date(year, month, day);
+					$scope.formData.incidentDate = $filter('date')(setDate, 'MM/dd/yyyy');
+				};
+				$scope.popup1 = {
+					opened : false
+				};
+				var tomorrow = new Date();
+				tomorrow.setDate(tomorrow.getDate() + 1);
+				var afterTomorrow = new Date();
+				afterTomorrow.setDate(tomorrow.getDate + 1);
+				$scope.events = [
+					{date : tomorrow, status : 'full'},
+					{date : afterTomorrow, status : 'partially'}
+				];
+	
+			    /////////////For the Next button/////////////
+				$scope.next = function(){
+					$scope.nextFlag = true;		
+					$location.path("/stagetwo");
+				};
+			}]);
+		
+			///////////////////For the Store drop-down///////////////////////
+			claimApp.controller('storeListCtrl', ['$scope', '$http', 'formData', 'utils', function($scope, $http, formData, utils){
+				$scope.formData = formData;
+				$scope.names = [];
+				$scope.showNames = false;
+				$scope.toggleNames = function(){
+					if($scope.showNames == false){
+						$scope.showNames = true;
+					}else{
+						$scope.showNames = false;
+					}
+				}
+		
+				// Set the sys id and update field with selection
+				$scope.updateField = function(name, storeName, id, street, city, state, zip, phone, manager){
+					$scope.formData.selectedStore.name = name;
+					$scope.formData.selectedStore.storeName = storeName;
+					$scope.formData.selectedStore.sys_id = id;
+					$scope.formData.selectedStore.street = street;
+					$scope.formData.selectedStore.city = city;
+					$scope.formData.selectedStore.state = state;
+					$scope.formData.selectedStore.zip = zip;
+					$scope.formData.selectedStore.phone = phone;
+					$scope.formData.selectedStore.manager = manager;
+					if (name != '' ${AND} id != ''){
+						$scope.stageone.storenumber.$setValidity("validStore", true);
+					}else{
+						$scope.stageone.storenumber.$setValidity("validStore", false);		
+					}
+					$scope.showNames = false;
+				}
+				
+				// If name in input matched an available name, then set value
+				$scope.matchName = function(nameArray){
+					for(var i = 0; i != nameArray.length; i++){
+						if (nameArray[i].name){
+							if (nameArray[i].name.toLowerCase() == $scope.formData.selectedStore.name.toLowerCase()){
+								$scope.updateField(nameArray[i].name, nameArray[i].storeName, nameArray[i].sys_id, nameArray[i].street, nameArray[i].city, nameArray[i].state, nameArray[i].zip, nameArray[i].phone, nameArray[i].manager);
+							}else{
+								$scope.formData.selectedStore.sys_id = '';
+								$scope.formData.selectedStore.storeName = '';
+								$scope.formData.selectedStore.street = '';
+								$scope.formData.selectedStore.city = '';
+								$scope.formData.selectedStore.state = '';
+								$scope.formData.selectedStore.zip = '';
+								$scope.formData.selectedStore.phone = '';
+								$scope.formData.selectedStore.manager = '';		
+							}
+						}
+					}
+				}
+	
+				// Grab a list of stores from servicenow (companies)
+				$scope.updateRecordList = function(){
+					$scope.formData.selectedStore.sys_id="";
+					$scope.formData.selectedStore.storeName = '';
+					$scope.formData.selectedStore.street = '';
+					$scope.formData.selectedStore.city = '';
+					$scope.formData.selectedStore.state = '';
+					$scope.formData.selectedStore.zip = '';
+					$scope.formData.selectedStore.phone = '';
+					$scope.formData.selectedStore.manager = '';			
+					var handleSuccess = function(response, status) {
+						if (response.result.length > 0){
+							$scope.names = response.result;
+							$scope.showNames = true;
+							$scope.matchName(response.result);
+						}else{
+							$scope.names = [{"name" : "No Results Found", "sys_id" : ""}];
+							$scope.showNames = true;
+						}
+					}
+					utils.getStoreList($scope.formData.selectedStore.name).success(handleSuccess);
+				} //end of updateRecordList function
+			}]);		
+		
+		/***************************************STAGE 2***************************************************/	
+		
+			claimApp.controller("stageTwoCtrl", ["$scope", "formData", "$location", "$sce", "utils",
+					function($scope, formData, $location, $sce, utils){
+				$scope.formData = formData;
+				$scope.formData.agreementData = [];
+				$scope.errorText = "";
+				$scope.error = false;
+				$scope.searchButtonText = ""; //changes based on type of search chosen
+				$scope.searchFlag = false;	  //used to disable fields on form after search button is clicked
+		
+				//Send user back to main page if current page is refreshed
+				if($scope.formData.selectedStore.name == ''){
+					$location.path("/stageone");
+				}
+		
+				//Get the claim todo's
+				$scope.getClaimTodos = function () {
+					$scope.formData.todoData = [];
+					utils.getClaimTodos(formData.claimType.value).then(function(response){
+						$scope.formData.todoData = response.data.result;
+					});
+				}
+
+				//Set search button text for customer lookup when based on input field selection (not radio selection) 
+				if ($scope.formData.lookupChoice == 'nameLookup') {
+					$scope.searchButtonText = "Search by Customer Name";
+				}else if ($scope.formData.lookupChoice == 'agreementLookup') {
+					$scope.searchButtonText = "Search by Agreement Number";	
+			    }else if ($scope.formData.lookupChoice == ''){
+					$scope.searchButtonText = "Search";
+				}
+		
+				//Update the radio button based on the user clicking into a field. 
+				$scope.updateChoiceSelection = function(choice){
+					if($scope.searchFlag == false){
+						if(choice == 'nameLookup'){
+							$scope.searchButtonText = "Search by Customer Name";
+						}else if(choice == 'agreementLookup'){
+							$scope.searchButtonText = "Search by Agreement Number";
+						}
+						$scope.formData.lookupChoice = choice;
+					}
+				}
+		
+				$scope.next = function(){
+					$scope.getClaimTodos(); //Pull the claim todo's for the selected subtype. 
+					$scope.searchFlag = true;
+					// Get customer list when searching by name
+					if ($scope.formData.lookupChoice == 'nameLookup') {
+						utils.getCustomerListByName(formData.lookUpFirstName, formData.lookUpLastName, formData.selectedStore.name).success(function(response){
+							$scope.formData.customerList = response.result;
+							if (response.result.length == 0) {
+								console.log("nameLookup customer list is empty");
+								$scope.errorText = $sce.trustAsHtml("<strong>Customer is not currently enrolled in Aaron's Club.</strong>");
+								$scope.searchFlag = false;
+								$scope.error = true;
+							}else if (response.result.length == 1) {
+								$scope.formData.selectedCustomer = response.result[0];
+								utils.getAgreementList(formData.selectedCustomer.Client.ClientId).then(function(response){
+									if (response.length != 0){
+										$scope.formData.agreementData = response;
+										$location.path("/stagethree");
+									}else{
+										$scope.errorText = $sce.trustAsHtml("<strong>Uh Oh! Customer has no claim eligible agreements.</strong>"+
+											"<br /><p>Please check the information provided.</p>");
+										$scope.formData.agreementData = [];
+										$scope.searchFlag = false;
+										$scope.error = true;
+									}
+								});
+							}else{
+								$location.path("/stagethree");
+							}
+						}) 
+					}else if($scope.formData.lookupChoice == 'agreementLookup') {   // Get customer list when searching by Agreement Number
+						utils.getCustomerListByAgreement(formData.lookUpAgreement, formData.selectedStore.name).success(function(response){
+							$scope.formData.customerList = response.result;
+							if (response.result.length == 0) {
+								console.log("agreementLookup; customer list is empty");
+								$scope.errorText = $sce.trustAsHtml("<strong>Customer is not currently enrolled in Aaron's Club.</strong>");
+								$scope.searchFlag = false;
+								$scope.error = true;
+							}else if(response.result.length == 1) {
+								$scope.formData.selectedCustomer = response.result[0];
+								utils.getAgreementList(formData.selectedCustomer.Client.ClientId).then(function(response){
+									if (response.length == 0){
+										$scope.formData.agreementData = [];
+										$scope.errorText = $sce.trustAsHtml("<strong>Uh Oh! Customer has no claim eligible agreements.</strong>"+
+											"<br /><p>Please check the information provided.</p>");
+										$scope.error = true;
+										$scope.searchFlag = false;
+									}else{
+										$scope.formData.agreementData = response;
+										for(var i = 0; i != $scope.formData.agreementData.length; i++){
+											if ($scope.formData.agreementData[i].AgreementNumber == formData.lookUpAgreement){
+												$scope.formData.agreementData[i].Selected = true; 
+											}
+										}
+										$location.path("/stagethree");
+									}
+								});
+							}else{
+								$location.path("/stagethree");
+							}
+						});
+					}
+				}
+		
+				$scope.back = function(){
+					$location.path("/stageone");
+				}
+			}]);		
+		
+	/***************************************STAGE 3***************************************************/	
+		
+			claimApp.controller("stageThreeCtrl", ["$scope", "formData", "$location", "utils", "$http", 
+				function($scope, formData, $location, utils, $http){
+					$scope.noAgreementSelected = true;  //flag used to prevent submitting if no agreement selected
+					$scope.formData = formData;
+					$scope.showError = false;
+					$scope.selectedAgreementItems = [];
+		
+					//Display todo's
+					$scope.todos = $scope.formData.todoData;
+		
+					//Select todo's
+					$scope.clickTodo = function(todo) {
+						if (todo.complete == false) {
+							todo.complete = true;
+						} else {
+							todo.complete = false;
+						}
+					}
+		
+					//Show the optional section if any exist
+					$scope.checkOptional = function() {
+						var optional = false;
+						for(var i = 0; i != $scope.formData.todoData.length; i++) {
+							if ($scope.formData.todoData[i].optional == "true") {
+								optional = true;
+							}
+						}
+						return optional;
+					}
+		
+					$scope.$on("$viewContentLoaded", function(){
+						$scope.validateAgreements();
+					});
+
+					//Send user back to main page if current page is refreshed
+					if ($scope.formData.selectedStore.name == ''){
+						$location.path("/stageone");
+					}
+
+					$scope.getAgreementList = function () {
+						$scope.selectAll(false);
+						$scope.formData.agreementData = [];
+						$scope.noAgreementSelected = true;
+						utils.getAgreementList(formData.selectedCustomer.Client.ClientId).then(function(response){
+							if (response.length == 0){
+								$scope.formData.agreementData = [];
+								$scope.showError = true;
+							}else{
+								$scope.showError = false;
+								$scope.formData.agreementData = response;
+							}
+						});
+					}
+		
+					$scope.selectAgreement = function(agreement, state){
+						agreement.Selected = state;
+						if (state) {
+							var tempArray = [];
+							tempArray = $scope.selectedAgreementItems.concat(agreement.Items);
+							$scope.selectedAgreementItems = tempArray;
+						}else{
+							var filteredArray = $scope.selectedAgreementItems.filter(function(item) {
+								for (var i in agreement.Items) {
+									if (item.ItemNumber == agreement.Items[i].ItemNumber) {
+										return false;
+									} 
+								}
+								return true;
+							});
+							$scope.selectedAgreementItems = filteredArray;
+						}
+						$scope.validateAgreements();
+					}					
+			
+					$scope.selectAll = function(state){
+						for (var i = 0; i != $scope.formData.agreementData.length; i++){
+							if ($scope.formData.agreementData[i].Selected != state){
+								$scope.selectAgreement($scope.formData.agreementData[i], state);
+							}
+						}
+					}
+		
+					$scope.setHighlighted = function(state){
+						for(var i = 0; i != $scope.formData.agreementChoices.length; i++){
+							for(var j = 0; j != $scope.formData.agreementData.length; j++){
+								if ($scope.formData.agreementChoices[i] == $scope.formData.agreementData[j].AgreementNumber){
+									$scope.selectAgreement($scope.formData.agreementData[j], state);
+								}
+							}
+						}
+						$scope.formData.agreementChoices = [];
+					}
+		
+					$scope.selectItem = function(item, state){
+						item.Selected = state;
+					}
+		
+					$scope.selectHighlightedItem = function(state){
+						for(var i = 0; i != $scope.formData.itemChoices.length; i++){
+							for(var j = 0; j != $scope.formData.agreementData.length; j++){
+								for(var k = 0; k != $scope.formData.agreementData[j].Items.length; k++){
+									if ($scope.formData.agreementData[j].Items[k].ItemNumber == $scope.formData.itemChoices[i]){
+										$scope.selectItem($scope.formData.agreementData[j].Items[k], state);
+									}
+								}
+							}
+						}
+					}
+		
+					$scope.selectAllItem = function(state){
+						for (var i = 0; i != $scope.selectedAgreementItems.length; i++){
+							if($scope.selectedAgreementItems[i].Selected != state){
+								$scope.selectItem($scope.selectedAgreementItems[i], state);
+							}
+						}
+					}
+		
+					//check if there's any selected agreements, for submit button activation
+					$scope.validateAgreements = function(){
+						if ($scope.formData.agreementData.find(checkSelected)){
+							$scope.noAgreementSelected = false;
+						}else{
+							$scope.noAgreementSelected = true;
+						}
+		
+						//Find function to look for selected agreements
+						function checkSelected(agreement){
+							return agreement.Selected == true;
+						}
+					}
+					
+					$scope.back = function(){
+						$location.path("/stagetwo");
+					}
+		
+					// GET THE FILE INFORMATION.
+					$scope.getFileDetails = function (e) {
+						var files = [], currentAttachments = $scope.formData.attachments;
+						$scope.$apply(function () {
+							// STORE THE FILE OBJECT IN AN ARRAY.
+							for (var i = 0; i != e.files.length; i++) {
+								if(!(e.files[i].size > 20480000)){
+									currentAttachments.push(e.files[i])
+								}else{
+									alert("File " + e.files[i].name + " is too large to upload. Files should be less than 20 MB.")
+								}
+							}
+							e.value = null;
+						});
+					};
+
+					$scope.removeFile = function(index){
+						$scope.formData.attachments.splice(index, 1);
+					};
+			}]);	
+		
+	/*************************************SUBMISSION*****************************************************/	
+		
+			claimApp.controller('submissionController', ['$scope', '$rootScope', '$http', 'formData', '$location', '$filter', 'utils',
+				function($scope, $rootScope, $http, formData, $location, $filter, utils){
+					$scope.formData = formData;
+					$scope.attachTable = "x_aaro2_club_claim_claim";
+					$scope.submitFlag = false; //used for disabling fields after submit button clicked
+					$scope.submit= function(){
+						$scope.submittedAttachments = 0;
+						$scope.submitFlag = true;
+						var page = location.pathname;
+						var fromEss;
+						if(page.indexOf('/ess/') > -1) {
+							fromEss = true;
+						}else{
+							fromEss = false;
+						}
+						
+						var obj = {
+							company : $scope.formData.selectedStore.sys_id,
+							claim_sub_type : $scope.formData.claimType.value,
+							date_of_incident : $scope.formData.incidentDate,
+							customer_first_name : $scope.formData.selectedCustomer.Client.FirstName,
+							customer_last_name : $scope.formData.selectedCustomer.Client.LastName,
+							description : $scope.formData.notes,
+							u_ess_request_for : window.NOW.user.userID,	//The person submitting claim form
+							u_from_ess : fromEss
+						};
+		
+						var checkSelected = function(agreement) {
+							return agreement.Selected == true;
+						}
+		
+						//Filter only the selected agreements
+						var filteredAgreements = $scope.formData.agreementData.filter(checkSelected);
+		
+						var handleSuccess = function(response, status) {
+							$scope.formData.recordNumber = response.result.number.toString();
+							$scope.formData.sys_id = response.result.sys_id.toString();
+							if ($scope.formData.attachments.length > 0){
+								var fd = new FormData();
+								$scope.formData.attachments.forEach(function(file){
+									fd.append('files', file);
+									var request = {
+										method: "POST",
+										url: "/api/now/attachment/file?table_name="+$scope.attachTable+"${AMP}table_sys_id="+
+											$scope.formData.sys_id+"${AMP}file_name="+file.name,
+										data: file,
+										headers:{
+											'Content-Type': 'undefined',		
+											'Accept': 'application/json',
+											'X-UserToken' : g_ck
+										}
+									};
+									$http(request)
+										.success(function(d){
+											console.log(file.name + " was uploaded successfully");
+											$scope.submittedAttachments++;
+											if($scope.submittedAttachments == $scope.formData.attachments.length){
+												$location.path('/submitted');
+											}
+										}).error(function(err){
+											alert("Uh Oh! There was an issue uploading the following file:\n\n" + file.name +
+													"\n\nPlease try attaching the file to the request, later, in the ESS.");
+											$scope.submittedAttachments++;
+											if($scope.submittedAttachments == $scope.formData.attachments.length){
+												$location.path('/submitted');
+											}
+										});
+								});
+							}else{
+								$location.path('/submitted');
+							}
+						}
+						utils.submit(obj, filteredAgreements, $scope.formData.todoData).success(handleSuccess);		
+					}	
+			}]);
+		
+			/*************************************Submitted******************************************************/
+			claimApp.controller("submittedCtrl", ["$scope", "formData", "$location", "claimDocGenerator", "$http", function($scope, formData, $location, claimDocGenerator, $http){
+				$scope.formData = formData;
+				$scope.attachTable = "x_aaro2_club_claim_claim";
+				if($scope.formData.recordNumber == ''){
+					$location.path("/stageone");
+				}
+		
+				var docDefinition = claimDocGenerator.createClaimDoc($scope.formData);
+		
+				pdfMake.createPdf(docDefinition).getBuffer(function(result){
+
+					var request = {
+						method: "POST",
+						url: "/api/now/attachment/file?table_name="+$scope.attachTable+"${AMP}table_sys_id="+
+						$scope.formData.sys_id+"${AMP}file_name=Claim.pdf",
+						data:  new Blob([result], { type: 'application/pdf' }),
+						headers:{
+							'Content-Type': 'application/pdf',		
+							'Accept': 'application/json',
+							'X-UserToken' : g_ck
+						}
+					};
+		
+					$http(request);
+				});
+		
+				$scope.openDoc = function(){
+					pdfMake.createPdf(docDefinition).open();
+				}
+		
+		
+			}]);		
+		
+		})();
+	</script>	
+	<div ng-app="claimApp" class="content container-fluid">
+		<div class="ng-view" autoscroll="true"></div>
+	</div>
+</j:jelly>]]></html>
+        <name>Club Claims Form</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-08-25 13:22:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>4dbeb20c4fe562803ad149cf0310c776</sys_id>
+        <sys_mod_count>932</sys_mod_count>
+        <sys_name>Club Claims Form</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ui_page_4dbeb20c4fe562803ad149cf0310c776</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-11-07 13:02:01</sys_updated_on>
+    </sys_ui_page>
+</record_update>

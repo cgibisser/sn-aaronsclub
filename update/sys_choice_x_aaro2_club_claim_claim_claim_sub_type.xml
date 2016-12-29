@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="claim_sub_type" table="x_aaro2_club_claim_claim" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>100</dependent_value>
+            <element>claim_sub_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Unemployment</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_claim</name>
+            <sequence/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>00fcdc9a13bda2086fcf7a404244b07a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+            <value>st100</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>110</dependent_value>
+            <element>claim_sub_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Fire</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_claim</name>
+            <sequence/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>8cfcdc9a13bda2086fcf7a404244b079</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+            <value>st110</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>110</dependent_value>
+            <element>claim_sub_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Theft</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_claim</name>
+            <sequence/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>ccfcdc9a13bda2086fcf7a404244b079</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+            <value>st120</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>120</dependent_value>
+            <element>claim_sub_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Death</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_claim</name>
+            <sequence/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>0cfcdc9a13bda2086fcf7a404244b079</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+            <value>st130</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>130</dependent_value>
+            <element>claim_sub_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Extended Warranty</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_claim</name>
+            <sequence/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>4cfcdc9a13bda2086fcf7a404244b079</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+            <value>st140</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>100</dependent_value>
+            <element>claim_sub_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Accident and Sickness</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_claim</name>
+            <sequence/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-11-11 11:19:16</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>cd5f00151303a6806fcf7a404244b00d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-11-11 11:19:16</sys_updated_on>
+            <value>st150</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>claim_sub_type</element>
+            <name>x_aaro2_club_claim_claim</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>40fcdc9a13bda2086fcf7a404244b07a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>claim_sub_type</sys_name>
+            <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+            <sys_update_name>sys_choice_x_aaro2_club_claim_claim_claim_sub_type</sys_update_name>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

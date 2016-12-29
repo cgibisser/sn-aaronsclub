@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" extends="task" label="Claim" max_length="40" name="x_aaro2_club_claim_claim" sizeclass="22" type="collection">
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Claim Number" max_length="40" name="claim_number" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" choice="1" label="Claim Sub-type" max_length="40" name="claim_sub_type" type="choice">
+            <choice>
+                <element dependent_value="100" label="Accident and Sickness" value="st150"/>
+                <element dependent_value="120" label="Death" value="st130"/>
+                <element dependent_value="130" label="Extended Warranty" value="st140"/>
+                <element dependent_value="110" label="Fire" value="st110"/>
+                <element dependent_value="110" label="Theft" value="st120"/>
+                <element dependent_value="100" label="Unemployment" value="st100"/>
+            </choice>
+        </element>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" choice="1" label="Claim Type" max_length="40" name="claim_type" type="choice">
+            <choice>
+                <element label="Courtesy Waiver" value="120"/>
+                <element label="Paid Out Product" value="130"/>
+                <element label="Payment Waiver" value="100"/>
+                <element label="Product Protection" value="110"/>
+            </choice>
+        </element>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Customer (DO NOT USE)" max_length="40" name="customer" read_only="true" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Customer First Name" max_length="40" name="customer_first_name" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Customer Last Name" max_length="40" name="customer_last_name" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Date of Incident" max_length="40" name="date_of_incident" type="glide_date"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" choice="1" default="1" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element label="Started" sequence="10" value="1"/>
+                <element label="Additional Docs Required" sequence="20" value="2"/>
+                <element label="Submitted to Aon" sequence="40" value="4"/>
+                <element label="Pending Approval" sequence="50" value="5"/>
+                <element label="Denied" sequence="60" value="6"/>
+                <element label="Approved" sequence="70" value="7"/>
+                <element label="Closed" sequence="80" value="8"/>
+            </choice>
+        </element>
+    </element>
+</database>

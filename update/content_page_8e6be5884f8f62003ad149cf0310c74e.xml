@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update node_type="content_page" unload_date="2016-12-29 19:35:48">
+    <sys_portal action="delete_multiple" query="page=8e6be5884f8f62003ad149cf0310c74e"/>
+    <content_page action="INSERT_OR_UPDATE">
+        <content_site/>
+        <content_theme/>
+        <description/>
+        <frame_buster>false</frame_buster>
+        <layout/>
+        <model_id/>
+        <model_table/>
+        <name/>
+        <order/>
+        <parent_page/>
+        <read_roles/>
+        <roles/>
+        <selectable>true</selectable>
+        <sys_class_name>content_page</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-11-07 20:49:16</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>8e6be5884f8f62003ad149cf0310c74e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>content_page_8e6be5884f8f62003ad149cf0310c74e</sys_update_name>
+        <sys_updated_by>xxrdoll</sys_updated_by>
+        <sys_updated_on>2016-11-07 20:49:16</sys_updated_on>
+        <title/>
+        <url_suffix/>
+        <user/>
+        <view/>
+        <workflow_state>published</workflow_state>
+    </content_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=8e6be5884f8f62003ad149cf0310c74e"/>
+</record_update>

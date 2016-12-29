@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_filter">
+    <sys_filter action="INSERT_OR_UPDATE">
+        <filter table="x_aaro2_assoc_onbd_request">sys_id=1fb0e0944f8622001491a50f0310c7b5^EQ<item endquery="false" field="sys_id" goto="false" newquery="false" operator="=" or="false" value="1fb0e0944f8622001491a50f0310c7b5"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <group/>
+        <last_used>2016-10-31 17:58:04</last_used>
+        <mobile>true</mobile>
+        <roles/>
+        <sys_class_name>sys_filter</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-10-20 18:01:56</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>74885cde4f6262003ad149cf0310c7da</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>mobile</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_filter_74885cde4f6262003ad149cf0310c7da</sys_update_name>
+        <sys_updated_by>xxrdoll</sys_updated_by>
+        <sys_updated_on>2016-10-31 17:58:04</sys_updated_on>
+        <table>x_aaro2_assoc_onbd_request</table>
+        <title>mobile</title>
+        <user display_value="Rebecca Doll - Admin">3769b1b24fafc200009509d14210c76b</user>
+    </sys_filter>
+</record_update>

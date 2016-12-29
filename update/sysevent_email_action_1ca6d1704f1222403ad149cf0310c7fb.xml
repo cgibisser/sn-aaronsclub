@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>false</action_insert>
+        <action_update>true</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <collection>x_aaro2_club_claim_claim</collection>
+        <condition table="x_aaro2_club_claim_claim">statusCHANGESTO2^ORstatusCHANGESTO4^ORstatusCHANGESTO7^ORstatusCHANGESTO6^EQ<item endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="false" value="2"/>
+            <item endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="true" value="4"/>
+            <item endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="true" value="7"/>
+            <item endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="true" value="6"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <content_type>text/html</content_type>
+        <description>Send an email to the store when a claim changes to certain statuses.</description>
+        <event_name>agreement.recovery.complete</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from>support@aarons.com</from>
+        <generation_type>engine</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<table class="content" style="width: 100%; max-width: 540px;" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<p><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif;"><strong><span style="color: #1b4377;">A&nbsp;Club Claim&nbsp;has changed status.</span></strong></span></p>
+<div><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">Club Claim request&nbsp;<strong>${number}</strong> has changed to&nbsp;status <strong>"${status}".</strong>&nbsp;</span></div>
+<div>&nbsp;</div>
+<div><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;"><strong>Customer:</strong> ${customer_first_name}&nbsp;${customer_last_name}</span></div>
+<div><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;"><strong>Store:</strong> ${company}</span></div>
+<div><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;"><strong>Claim Type:</strong> ${claim_sub_type}<br /></span></div>
+<div><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;"><strong>Date of Incident:</strong> ${date_of_incident}<br /><strong>Description of Claim:</strong> ${description}</span></div>
+<div>&nbsp;</div>
+<div><strong style="font-size: 12pt; font-family: arial, helvetica, sans-serif;"><span style="color: #1b4377;">Comments:</span></strong></div>
+<div><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">${comments_and_work_notes}<br /></span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif;"><strong><span style="color: #1b4377;">&nbsp;</span></strong></span><strong><span style="color: #1b4377;">&nbsp;</span></strong></div>
+<div><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif;"><strong><span style="color: #1b4377;">Please visit ${mail_script:ESS_here_club_claims}&nbsp;to review the claim.</span></strong></span></div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Notify store of status change</name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields>u_ess_request_for</recipient_fields>
+        <recipient_groups/>
+        <recipient_users/>
+        <reply_to>support@aarons.com</reply_to>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>The Club Claim status has changed for ${customer_first_name} ${customer_last_name}</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-10-03 20:32:33</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>1ca6d1704f1222403ad149cf0310c7fb</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Notify store of status change</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sysevent_email_action_1ca6d1704f1222403ad149cf0310c7fb</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-10-06 19:31:34</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template/>
+        <type>email</type>
+        <weight>0</weight>
+    </sysevent_email_action>
+</record_update>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Should Phase One be active?&#13;
+Phase one: Only one page, containing the following 5 items: (1) Store number (2)Claim type (3)Incident Date (4)Customer name (5)Notes</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_aaro2_club_claim.phaseOne</name>
+        <read_roles>admin</read_roles>
+        <suffix>phaseOne</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-09-06 15:16:20</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a07c054c4f71e2001491a50f0310c75d</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>x_aaro2_club_claim.phaseOne</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_properties_a07c054c4f71e2001491a50f0310c75d</sys_update_name>
+        <sys_updated_by>xxrdoll</sys_updated_by>
+        <sys_updated_on>2016-09-06 22:59:34</sys_updated_on>
+        <type>boolean</type>
+        <value>true</value>
+        <write_roles>admin</write_roles>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=a07c054c4f71e2001491a50f0310c75d"/>
+</record_update>

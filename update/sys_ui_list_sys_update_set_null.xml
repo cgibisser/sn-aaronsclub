@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="sys_update_set" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>name</element>
+            <list_id display_value="sys_update_set" element="NULL" name="sys_update_set" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0b2739e7139e6a006fcf7a404244b09a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-12 11:52:13</sys_created_on>
+            <sys_id>cb2739e7139e6a006fcf7a404244b09a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-12 11:52:13</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>application</element>
+            <list_id display_value="sys_update_set" element="NULL" name="sys_update_set" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0b2739e7139e6a006fcf7a404244b09a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-12 11:52:13</sys_created_on>
+            <sys_id>0f2739e7139e6a006fcf7a404244b09a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-12 11:52:13</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>completed_by</element>
+            <list_id display_value="sys_update_set" element="NULL" name="sys_update_set" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0b2739e7139e6a006fcf7a404244b09a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-12 11:52:13</sys_created_on>
+            <sys_id>4f2739e7139e6a006fcf7a404244b09a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-12 11:52:13</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>completed_on</element>
+            <list_id display_value="sys_update_set" element="NULL" name="sys_update_set" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0b2739e7139e6a006fcf7a404244b09a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-12 11:52:13</sys_created_on>
+            <sys_id>8f2739e7139e6a006fcf7a404244b09a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-12 11:52:13</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>description</element>
+            <list_id display_value="sys_update_set" element="NULL" name="sys_update_set" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0b2739e7139e6a006fcf7a404244b09a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-12 11:52:13</sys_created_on>
+            <sys_id>cf2739e7139e6a006fcf7a404244b09a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-12 11:52:13</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>install_date</element>
+            <list_id display_value="sys_update_set" element="NULL" name="sys_update_set" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0b2739e7139e6a006fcf7a404244b09a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-12 11:52:13</sys_created_on>
+            <sys_id>032739e7139e6a006fcf7a404244b09b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-12 11:52:13</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>installed_from</element>
+            <list_id display_value="sys_update_set" element="NULL" name="sys_update_set" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0b2739e7139e6a006fcf7a404244b09a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-12 11:52:13</sys_created_on>
+            <sys_id>432739e7139e6a006fcf7a404244b09b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-12 11:52:13</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>is_default</element>
+            <list_id display_value="sys_update_set" element="NULL" name="sys_update_set" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0b2739e7139e6a006fcf7a404244b09a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-12 11:52:13</sys_created_on>
+            <sys_id>832739e7139e6a006fcf7a404244b09b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-12 11:52:13</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>merged_to</element>
+            <list_id display_value="sys_update_set" element="NULL" name="sys_update_set" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0b2739e7139e6a006fcf7a404244b09a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-12 11:52:13</sys_created_on>
+            <sys_id>c32739e7139e6a006fcf7a404244b09b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-12 11:52:13</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>origin_sys_id</element>
+            <list_id display_value="sys_update_set" element="NULL" name="sys_update_set" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0b2739e7139e6a006fcf7a404244b09a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-12 11:52:13</sys_created_on>
+            <sys_id>072739e7139e6a006fcf7a404244b09b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-12 11:52:13</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>sys_update_set</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>xxrdoll</sys_created_by>
+            <sys_created_on>2016-10-03 20:08:47</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>d98215bc4fdeee003ad149cf0310c734</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sys_update_set</sys_name>
+            <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+            <sys_update_name>sys_ui_list_sys_update_set_null</sys_update_name>
+            <sys_updated_by>xxrdoll</sys_updated_by>
+            <sys_updated_on>2016-10-03 20:08:47</sys_updated_on>
+            <sys_user display_value="Rebecca Doll - Admin">3769b1b24fafc200009509d14210c76b</sys_user>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

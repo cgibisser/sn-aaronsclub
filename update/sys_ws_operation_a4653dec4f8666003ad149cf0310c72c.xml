@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/x_aaro2_club_claim/utils/getCustomerListByName</default_operation_uri>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>getCustomerListByName</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	
+	// implement resource here
+	var azureADUtil = new x_aaro2_azure_ad.AzureADAuthUtils();
+	var token = azureADUtil.getAccessToken(gs.getProperty('x_aaro2_club_claim.token_resource_customer_connect'));
+	// Check that token exists
+	if (token != 'Unable to find access token'){
+		var requestBody, responseBody, status, restMessage, response, requestBodyString, responseObj;
+		var parser = new global.JSON();
+		
+		requestBody = request.body.data;
+		requestBodyString = parser.encode(requestBody);
+		try {
+			restMessage = new sn_ws.RESTMessageV2();
+			restMessage.setHttpMethod('post');
+			restMessage.setMIDServer(gs.getProperty('mid.server.rba_default'));
+			restMessage.setEndpoint(gs.getProperty('x_aaro2_club_claim.customer_connect_endpoint_by_name'));
+			restMessage.setRequestHeader('Content-Type', 'application/json');
+			restMessage.setRequestHeader('Accept', 'application/json');
+			restMessage.setRequestHeader('Authorization', 'Bearer ' + token);
+			restMessage.setRequestBody(requestBodyString); 
+			responseBody = restMessage.execute().getBody();
+			
+		}catch(ex) {
+			responseBody = ex.getMessage();
+			gs.error('Error for Request : {0}.', responseBody);
+		}finally{
+			requestBody = restMessage ? restMessage.getRequestBody() : null;
+		}
+		if (status > 299){
+			gs.error("There is an error with the webservice: HTTP Response - {0}", status);
+		}
+		responseObj = parser.decode(responseBody);
+		return responseObj;
+	} else {
+		gs.info('I failed and returned 0');
+		return 0;
+	}
+	
+	
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_aaro2_club_claim/v1/utils/getCustomerListByName</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/getCustomerListByName</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>xxpgrupe</sys_created_by>
+        <sys_created_on>2016-09-20 17:52:04</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a4653dec4f8666003ad149cf0310c72c</sys_id>
+        <sys_mod_count>39</sys_mod_count>
+        <sys_name>getCustomerListByName</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ws_operation_a4653dec4f8666003ad149cf0310c72c</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-10-12 15:40:29</sys_updated_on>
+        <web_service_definition display_value="utils">851d9b594fa122003ad149cf0310c759</web_service_definition>
+        <web_service_version display_value="v1">db4d9b594fa122003ad149cf0310c75c</web_service_version>
+    </sys_ws_operation>
+</record_update>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="claim_type" table="x_aaro2_club_claim_claim" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>claim_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Payment Waiver</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_claim</name>
+            <sequence/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>04fcdc9a13bda2086fcf7a404244b07a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+            <value>100</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>claim_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Product Protection</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_claim</name>
+            <sequence/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>44fcdc9a13bda2086fcf7a404244b07a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+            <value>110</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>claim_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Courtesy Waiver</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_claim</name>
+            <sequence/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>80fcdc9a13bda2086fcf7a404244b07a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+            <value>120</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>claim_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Paid Out Product</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_claim</name>
+            <sequence/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>c0fcdc9a13bda2086fcf7a404244b07a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+            <value>130</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>claim_type</element>
+            <name>x_aaro2_club_claim_claim</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-09-13 11:34:11</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>84fcdc9a13bda2086fcf7a404244b07a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>claim_type</sys_name>
+            <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+            <sys_update_name>sys_choice_x_aaro2_club_claim_claim_claim_type</sys_update_name>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-09-13 11:34:11</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

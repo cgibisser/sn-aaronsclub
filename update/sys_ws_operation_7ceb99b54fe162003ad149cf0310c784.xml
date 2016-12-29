@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/x_aaro2_club_claim/utils/getmystores</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get My Stores</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+	gs.info(request.queryParams.userId);
+    var gr = new GlideRecord('sys_user');
+	gr.addQuery('sys_id', request.queryParams.userId);
+	gr.query();
+	gr.next();
+	
+	function getChildCompanies(companies){
+		if (!(companies instanceof Array)){
+			var companies = [];
+		}
+		gs.info(companies);
+		var noMoreChildren = 0;
+		var arrayUtil = new global.ArrayUtil();
+		var arrayLength = companies.length;
+		gs.info(arrayLength);
+		
+		for (var i = 0; i < arrayLength; i++){
+			gs.info("inside the for loop {0}",i);
+			var gr = new GlideRecord('core_company');
+			gr.addActiveQuery();
+			gr.addQuery('parent', companies[i]);
+			gr.query();
+			if(gr.hasNext()){
+				var childrenFlag = 0;
+				while(gr.next()){
+					gs.info("Current SysID:{0}", gr.sys_id.toString());
+					gs.info(arrayUtil.contains(companies, gr.sys_id.toString()));
+					if (!arrayUtil.contains(companies, gr.sys_id.toString())){
+						gs.info("current sys_id:{0}", gr.sys_id.toString());
+						companies.push(gr.sys_id.toString());
+					}else{
+						childrenFlag++;
+					}
+				}
+				gs.info('RowCount:{0}',gr.getRowCount());
+				if (gr.getRowCount() === childrenFlag){
+					noMoreChildren++;
+				}
+			}else{
+				noMoreChildren++;
+			}
+		}
+		gs.info("Arraylength:{0} noMoreChildren:{1}", arrayLength, noMoreChildren);
+		gs.info("before check:{0}", companies);
+		if(noMoreChildren === arrayLength){
+			gs.info("final:{0}",companies);
+			return companies;
+		}else{
+			gs.info("continued:{0}",companies);
+			return getChildCompanies(companies);
+		}
+	}
+	
+	return getChildCompanies(gr.company.sys_id);
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_aaro2_club_claim/v1/utils/getmystores</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/getmystores</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>xxschowell</sys_created_by>
+        <sys_created_on>2016-08-30 16:37:33</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7ceb99b54fe162003ad149cf0310c784</sys_id>
+        <sys_mod_count>40</sys_mod_count>
+        <sys_name>Get My Stores</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ws_operation_7ceb99b54fe162003ad149cf0310c784</sys_update_name>
+        <sys_updated_by>xxschowell</sys_updated_by>
+        <sys_updated_on>2016-08-31 17:27:45</sys_updated_on>
+        <web_service_definition display_value="utils">851d9b594fa122003ad149cf0310c759</web_service_definition>
+        <web_service_version display_value="v1">db4d9b594fa122003ad149cf0310c75c</web_service_version>
+    </sys_ws_operation>
+</record_update>

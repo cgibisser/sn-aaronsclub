@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_filter">
+    <sys_filter action="INSERT_OR_UPDATE">
+        <filter table="x_aaro2_club_claim_claim">sys_id=429c98614fa122001491a50f0310c72e^EQ<item endquery="false" field="sys_id" goto="false" newquery="false" operator="=" or="false" value="429c98614fa122001491a50f0310c72e"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <group/>
+        <last_used>2016-08-29 17:30:03</last_used>
+        <mobile>true</mobile>
+        <roles/>
+        <sys_class_name>sys_filter</sys_class_name>
+        <sys_created_by>accoombs</sys_created_by>
+        <sys_created_on>2016-08-29 17:30:03</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>f28ed4294f6522003ad149cf0310c796</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>mobile</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_filter_f28ed4294f6522003ad149cf0310c796</sys_update_name>
+        <sys_updated_by>accoombs</sys_updated_by>
+        <sys_updated_on>2016-08-29 17:30:03</sys_updated_on>
+        <table>x_aaro2_club_claim_claim</table>
+        <title>mobile</title>
+        <user display_value="Aaron Coombs">fe451d269c544d003d789b9c8ea5ca4d</user>
+    </sys_filter>
+</record_update>

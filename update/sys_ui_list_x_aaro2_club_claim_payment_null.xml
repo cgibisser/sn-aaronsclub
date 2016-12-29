@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_aaro2_club_claim_payment" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>agreement</element>
+            <list_id display_value="x_aaro2_club_claim_payment" element="NULL" name="x_aaro2_club_claim_payment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2f8ae48113926a001a84bf304244b0ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-04 11:52:39</sys_created_on>
+            <sys_id>ef8ae48113926a001a84bf304244b0ec</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-04 11:52:39</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>payment_amount</element>
+            <list_id display_value="x_aaro2_club_claim_payment" element="NULL" name="x_aaro2_club_claim_payment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2f8ae48113926a001a84bf304244b0ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-04 11:52:39</sys_created_on>
+            <sys_id>238ae48113926a001a84bf304244b0ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-04 11:52:39</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>payment_date</element>
+            <list_id display_value="x_aaro2_club_claim_payment" element="NULL" name="x_aaro2_club_claim_payment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2f8ae48113926a001a84bf304244b0ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-04 11:52:39</sys_created_on>
+            <sys_id>638ae48113926a001a84bf304244b0ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-04 11:52:39</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>total_payment_amount</element>
+            <list_id display_value="x_aaro2_club_claim_payment" element="NULL" name="x_aaro2_club_claim_payment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2f8ae48113926a001a84bf304244b0ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-04 11:52:39</sys_created_on>
+            <sys_id>a38ae48113926a001a84bf304244b0ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-04 11:52:39</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>balance_applied</element>
+            <list_id display_value="x_aaro2_club_claim_payment" element="NULL" name="x_aaro2_club_claim_payment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2f8ae48113926a001a84bf304244b0ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-04 11:52:39</sys_created_on>
+            <sys_id>e38ae48113926a001a84bf304244b0ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-04 11:52:39</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>old_paid_through_date</element>
+            <list_id display_value="x_aaro2_club_claim_payment" element="NULL" name="x_aaro2_club_claim_payment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2f8ae48113926a001a84bf304244b0ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-04 11:52:39</sys_created_on>
+            <sys_id>278ae48113926a001a84bf304244b0ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-04 11:52:39</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>new_paid_through_date</element>
+            <list_id display_value="x_aaro2_club_claim_payment" element="NULL" name="x_aaro2_club_claim_payment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2f8ae48113926a001a84bf304244b0ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-04 11:52:39</sys_created_on>
+            <sys_id>678ae48113926a001a84bf304244b0ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-04 11:52:39</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>days_non_renewed</element>
+            <list_id display_value="x_aaro2_club_claim_payment" element="NULL" name="x_aaro2_club_claim_payment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2f8ae48113926a001a84bf304244b0ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>xxlhburnet</sys_created_by>
+            <sys_created_on>2016-10-04 11:52:39</sys_created_on>
+            <sys_id>a78ae48113926a001a84bf304244b0ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxlhburnet</sys_updated_by>
+            <sys_updated_on>2016-10-04 11:52:39</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_aaro2_club_claim_payment</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>xxrdoll</sys_created_by>
+            <sys_created_on>2016-09-30 13:50:28</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>de2f9c7b4f8a6e003ad149cf0310c7be</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_aaro2_club_claim_payment</sys_name>
+            <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+            <sys_update_name>sys_ui_list_x_aaro2_club_claim_payment_null</sys_update_name>
+            <sys_updated_by>xxrdoll</sys_updated_by>
+            <sys_updated_on>2016-09-30 13:50:28</sys_updated_on>
+            <sys_user display_value="Rebecca Doll - Admin">3769b1b24fafc200009509d14210c76b</sys_user>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

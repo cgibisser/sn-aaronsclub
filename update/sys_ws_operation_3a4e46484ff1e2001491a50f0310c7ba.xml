@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/x_aaro2_club_claim/utils/getPhaseOne</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>getPhaseOne</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+//	var choiceList = "";  //will hold all possible values of the phases for club claims
+	var phaseOne = gs.getProperty('x_aaro2_club_claim.phaseOne');
+	
+	
+	
+//	var phases = [];
+	
+    //parse through the system property (a choice list) set values to true/false
+// 	var gr = new GlideRecord('sys_properties');
+// 	gr.addQuery('name', 'x_aaro2_club_claim.phase');
+// 	gr.query();
+// 	gr.next();
+// 	choiceList = gr.choices.toString();
+// 	choiceList = choiceList.split(", "); //convert comma-separated string to array
+	
+// 	for(var i=0; i<choiceList.length; i++){
+// 		if(choiceList[i] != currentPhase){
+// 			//if it's not current, set phase number equal to false
+// 		   phases.push({phase : choiceList[i].toString(), value : false});
+// 		 } else {
+// 			phases.push({phase : choiceList[i].toString(), value : true});
+// 		 }
+// 	}
+	
+	return phaseOne;
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_aaro2_club_claim/v1/utils/getPhaseOne</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/getPhaseOne</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-09-06 20:08:59</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3a4e46484ff1e2001491a50f0310c7ba</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>getPhaseOne</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ws_operation_3a4e46484ff1e2001491a50f0310c7ba</sys_update_name>
+        <sys_updated_by>xxrdoll</sys_updated_by>
+        <sys_updated_on>2016-09-08 14:05:08</sys_updated_on>
+        <web_service_definition display_value="utils">851d9b594fa122003ad149cf0310c759</web_service_definition>
+        <web_service_version display_value="v1">db4d9b594fa122003ad149cf0310c75c</web_service_version>
+    </sys_ws_operation>
+</record_update>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="agreement" label="Agreement" language="en" table="x_aaro2_club_claim_payment">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>agreement</element>
+            <help/>
+            <hint/>
+            <label>Agreement</label>
+            <language>en</language>
+            <name>x_aaro2_club_claim_payment</name>
+            <plural>Agreements</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>xxpgrupe</sys_created_by>
+            <sys_created_on>2016-08-31 17:09:57</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>c42d668e4fe1a2003ad149cf0310c747</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Agreement</sys_name>
+            <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+            <sys_update_name>sys_documentation_x_aaro2_club_claim_payment_agreement_en</sys_update_name>
+            <sys_updated_by>xxpgrupe</sys_updated_by>
+            <sys_updated_on>2016-08-31 17:09:57</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

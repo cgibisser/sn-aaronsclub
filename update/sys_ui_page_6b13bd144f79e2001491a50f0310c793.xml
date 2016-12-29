@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>The page that shows after the form was submitted.</description>
+        <direct>true</direct>
+        <endpoint>x_aaro2_club_claim_Club_Claims_Submitted.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<label>Your request has been submitted</label>
+		</div>
+		<div class="panel-body">
+			<p>Your request ({{formData.recordNumber}}) has been submitted successfully. The status of this request will be available from the
+				<a target="_blank" href="/ess/requests.do">$[SP]My Requests </a>$[SP]page in the ESS.
+			</p>
+			<p style="font-weight:bold;">All waivers and claims must be accompanied with: A copy of the membership agreement, a copy of the lease agreement(s), 
+				and a copy of the payment history showing club payments.
+			</p>
+			<button class="btn btn-primary center-block" ng-click="openDoc()">Click Here to Download this Claim</button>
+			<p style="font-weight:bold;">Send claim form with support information to:
+				<a href="mailto:customerservice@benefitmarketingsolutions.com?Subject=Claim%20Information" target="_top">$[SP]customerservice@benefitmarketingsolutions.com</a>,
+				fax (405) 579-0534, or mail to:
+			</p>
+			<ul class="list-unstyled" >
+				<li>Claims Department</li>
+				<li>900 36th Ave. NW</li>
+				<li>Suite 105</li>
+				<li>Norman, OK 73072</li>
+			</ul>
+			<p style="font-weight:bold;">For questions, call toll-free 1-888-322-6705.</p>
+		</div>
+	</div>	
+</j:jelly>]]></html>
+        <name>Club_Claims_Submitted</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-09-07 12:44:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>6b13bd144f79e2001491a50f0310c793</sys_id>
+        <sys_mod_count>43</sys_mod_count>
+        <sys_name>Club_Claims_Submitted</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ui_page_6b13bd144f79e2001491a50f0310c793</sys_update_name>
+        <sys_updated_by>xxschowell</sys_updated_by>
+        <sys_updated_on>2016-10-21 18:19:21</sys_updated_on>
+    </sys_ui_page>
+</record_update>

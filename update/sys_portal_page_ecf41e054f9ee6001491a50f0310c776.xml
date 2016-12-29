@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update node_type="sys_portal_page" unload_date="2016-12-29 19:35:50">
+    <sys_portal_page action="INSERT_OR_UPDATE">
+        <layout display_value="layout_2_across_catalog">e5df1203c3330100c8b837659bba8fcf</layout>
+        <order/>
+        <read_roles/>
+        <roles>admin,x_aaro2_club_claim.admin</roles>
+        <selectable>true</selectable>
+        <sys_class_name>sys_portal_page</sys_class_name>
+        <sys_created_by>xxrdoll</sys_created_by>
+        <sys_created_on>2016-10-04 19:38:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>ecf41e054f9ee6001491a50f0310c776</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Club Claims</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_portal_page_ecf41e054f9ee6001491a50f0310c776</sys_update_name>
+        <sys_updated_by>xxcjgibiss</sys_updated_by>
+        <sys_updated_on>2016-10-06 15:00:17</sys_updated_on>
+        <title>Club Claims</title>
+        <user/>
+        <view>cc</view>
+        <related_items_node>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone1</dropzone>
+                <offset>1</offset>
+                <page display_value="Club Claims">ecf41e054f9ee6001491a50f0310c776</page>
+                <summary/>
+                <sys_created_by>xxrdoll</sys_created_by>
+                <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                <sys_id>081a1b214f926a001491a50f0310c714</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>xxrdoll</sys_updated_by>
+                <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_size</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>401a1b214f926a001491a50f0310c715</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>12pt</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>publisher_widget</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>441a1b214f926a001491a50f0310c715</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>481a1b214f926a001491a50f0310c714</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>84aa52c54f9ee6001491a50f0310c70b</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_border</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>481a1b214f926a001491a50f0310c715</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_align</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>4c1a1b214f926a001491a50f0310c714</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>center</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>4c1a1b214f926a001491a50f0310c715</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>Claims by Division (Corporate)</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_title</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>c01a1b214f926a001491a50f0310c715</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>widget_height</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>c41a1b214f926a001491a50f0310c715</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>c81a1b214f926a001491a50f0310c714</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderDashboard</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>c81a1b214f926a001491a50f0310c715</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>subscriber_widget</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>cc1a1b214f926a001491a50f0310c714</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">081a1b214f926a001491a50f0310c714</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>cc1a1b214f926a001491a50f0310c715</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>ecf41e054f9ee6001491a50f0310c776</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone1</dropzone>
+                <offset>0</offset>
+                <page display_value="Club Claims">ecf41e054f9ee6001491a50f0310c776</page>
+                <summary/>
+                <sys_created_by>xxrdoll</sys_created_by>
+                <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                <sys_id>0c1a1b214f926a001491a50f0310c712</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>xxrdoll</sys_updated_by>
+                <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_size</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>401a1b214f926a001491a50f0310c713</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>12pt</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>publisher_widget</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>401a1b214f926a001491a50f0310c714</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>441a1b214f926a001491a50f0310c713</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>441a1b214f926a001491a50f0310c714</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>ecf41e054f9ee6001491a50f0310c776</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>481a1b214f926a001491a50f0310c713</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>3aad5e094f9ee6001491a50f0310c76e</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>4c1a1b214f926a001491a50f0310c712</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderDashboard</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_publish</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>4c1a1b214f926a001491a50f0310c713</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_border</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>c01a1b214f926a001491a50f0310c713</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>widget_height</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>c01a1b214f926a001491a50f0310c714</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>c41a1b214f926a001491a50f0310c713</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>Claims by Type</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>subscriber_widget</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>c81a1b214f926a001491a50f0310c713</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_align</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>cc1a1b214f926a001491a50f0310c712</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>center</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_title</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">0c1a1b214f926a001491a50f0310c712</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>cc1a1b214f926a001491a50f0310c713</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone2</dropzone>
+                <offset>1</offset>
+                <page display_value="Club Claims">ecf41e054f9ee6001491a50f0310c776</page>
+                <summary/>
+                <sys_created_by>xxrdoll</sys_created_by>
+                <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                <sys_id>181a1b214f926a001491a50f0310c719</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>xxrdoll</sys_updated_by>
+                <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_size</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>501a1b214f926a001491a50f0310c71a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>12pt</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_title</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>541a1b214f926a001491a50f0310c71a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>581a1b214f926a001491a50f0310c719</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>700ddec54f9ee6001491a50f0310c73d</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_border</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>581a1b214f926a001491a50f0310c71a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>5c1a1b214f926a001491a50f0310c719</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderDashboard</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>5c1a1b214f926a001491a50f0310c71a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>Claims by Region (Corporate)</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>publisher_widget</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d01a1b214f926a001491a50f0310c71a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>widget_height</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d41a1b214f926a001491a50f0310c71a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_align</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d81a1b214f926a001491a50f0310c719</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>center</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d81a1b214f926a001491a50f0310c71a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>subscriber_widget</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>dc1a1b214f926a001491a50f0310c719</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">181a1b214f926a001491a50f0310c719</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>dc1a1b214f926a001491a50f0310c71a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>ecf41e054f9ee6001491a50f0310c776</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone2</dropzone>
+                <offset>0</offset>
+                <page display_value="Club Claims">ecf41e054f9ee6001491a50f0310c776</page>
+                <summary/>
+                <sys_created_by>xxrdoll</sys_created_by>
+                <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                <sys_id>1c1a1b214f926a001491a50f0310c717</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>xxrdoll</sys_updated_by>
+                <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_size</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>501a1b214f926a001491a50f0310c718</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>12pt</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>publisher_widget</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>501a1b214f926a001491a50f0310c719</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>541a1b214f926a001491a50f0310c718</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>541a1b214f926a001491a50f0310c719</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>ecf41e054f9ee6001491a50f0310c776</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>581a1b214f926a001491a50f0310c718</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>70671e454f9ee6001491a50f0310c73e</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>5c1a1b214f926a001491a50f0310c717</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderDashboard</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_publish</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>5c1a1b214f926a001491a50f0310c718</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_border</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d01a1b214f926a001491a50f0310c718</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>widget_height</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d01a1b214f926a001491a50f0310c719</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d41a1b214f926a001491a50f0310c718</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>Claims by Status</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>subscriber_widget</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d81a1b214f926a001491a50f0310c718</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_align</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>dc1a1b214f926a001491a50f0310c717</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>center</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_title</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">1c1a1b214f926a001491a50f0310c717</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>dc1a1b214f926a001491a50f0310c718</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone1</dropzone>
+                <offset>2</offset>
+                <page display_value="Club Claims">ecf41e054f9ee6001491a50f0310c776</page>
+                <summary/>
+                <sys_created_by>xxrdoll</sys_created_by>
+                <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                <sys_id>801a1b214f926a001491a50f0310c716</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>xxrdoll</sys_updated_by>
+                <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>441a1b214f926a001491a50f0310c716</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderDashboard</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>widget_height</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>501a1b214f926a001491a50f0310c717</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>541a1b214f926a001491a50f0310c717</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>subscriber_widget</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>581a1b214f926a001491a50f0310c716</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>581a1b214f926a001491a50f0310c717</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>ecf41e054f9ee6001491a50f0310c776</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_title</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>5c1a1b214f926a001491a50f0310c716</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>c01a1b214f926a001491a50f0310c716</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>35779f6d4f526a001491a50f0310c7fb</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_border</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d01a1b214f926a001491a50f0310c717</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_align</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d41a1b214f926a001491a50f0310c716</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>center</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d41a1b214f926a001491a50f0310c717</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>Claims by Franchise</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_size</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>d81a1b214f926a001491a50f0310c716</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value>12pt</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>publisher_widget</name>
+                        <portal_section display_value="Created 2016-10-06 09:56:26">801a1b214f926a001491a50f0310c716</portal_section>
+                        <sys_created_by>xxrdoll</sys_created_by>
+                        <sys_created_on>2016-10-06 13:56:26</sys_created_on>
+                        <sys_id>dc1a1b214f926a001491a50f0310c716</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>xxrdoll</sys_updated_by>
+                        <sys_updated_on>2016-10-06 13:56:26</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+        </related_items_node>
+    </sys_portal_page>
+</record_update>

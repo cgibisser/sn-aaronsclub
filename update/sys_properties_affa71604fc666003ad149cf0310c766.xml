@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>This is the endpoint for the customer connect webservice to get customers by name.</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>true</is_private>
+        <name>x_aaro2_club_claim.customer_connect_endpoint_by_name</name>
+        <read_roles>admin</read_roles>
+        <suffix>customer_connect_endpoint_by_name</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>xxpgrupe</sys_created_by>
+        <sys_created_on>2016-09-20 18:13:35</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>affa71604fc666003ad149cf0310c766</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>x_aaro2_club_claim.customer_connect_endpoint_by_name</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_properties_affa71604fc666003ad149cf0310c766</sys_update_name>
+        <sys_updated_by>xxlhburnet</sys_updated_by>
+        <sys_updated_on>2016-12-11 19:07:06</sys_updated_on>
+        <type>string</type>
+        <value>https://customerconnectwsdev.aarons.com/api/ServiceNow/SearchByFirstNameLastNameStore</value>
+        <write_roles>admin</write_roles>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=affa71604fc666003ad149cf0310c766"/>
+</record_update>

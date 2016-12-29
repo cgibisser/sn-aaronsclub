@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_query_parameter">
+    <sys_ws_query_parameter action="INSERT_OR_UPDATE">
+        <example_value/>
+        <name>sysID</name>
+        <required>false</required>
+        <short_description/>
+        <sys_class_name>sys_ws_query_parameter</sys_class_name>
+        <sys_created_by>xxpgrupe</sys_created_by>
+        <sys_created_on>2016-11-07 19:11:31</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>0505d5004f8f62003ad149cf0310c758</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sysID</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ws_query_parameter_0505d5004f8f62003ad149cf0310c758</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2016-11-07 19:11:31</sys_updated_on>
+        <web_service_definition display_value="Utils">c05ae9504f79e2001491a50f0310c78f</web_service_definition>
+    </sys_ws_query_parameter>
+</record_update>
