@@ -131,7 +131,7 @@ claimDoc.factory('claimDocGenerator', function() {
 									   ' PAYMENT HISTORY SHOWING CLUB PAYMENTS. SEND CLAIM' +
 									   ' FORM WITH SUPPORT INFORMATION' + 
 									   ' TO:customerservice@benefitmarketingsolutions.com,' + 
-									   ' FAX (405) 579-0534 OR MAIL TO CLAIMS DEPARTMENT,' + 
+									   ' FAX 855-511-7296 OR MAIL TO CLAIMS DEPARTMENT,' + 
 									   ' 900 36TH AVE. NW, SUITE 105 NORMAN, OK 73072.' + 
 									   ' FOR QUESTIONS CALL TOLL-FREE 1-888-322-6705.',
 								style : 'boldFormDescription'
@@ -896,17 +896,17 @@ claimDoc.factory('claimDocGenerator', function() {
         <sys_class_name>sys_ui_script</sys_class_name>
         <sys_created_by>xxschowell</sys_created_by>
         <sys_created_on>2016-10-20 19:54:50</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_customer_update>true</sys_customer_update>
         <sys_id>68d1f8964fe262003ad149cf0310c7e1</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>x_aaro2_club_claim.generateClaimDoc</sys_name>
         <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
         <sys_update_name>sys_ui_script_68d1f8964fe262003ad149cf0310c7e1</sys_update_name>
-        <sys_updated_by>xxschowell</sys_updated_by>
-        <sys_updated_on>2016-10-24 19:24:11</sys_updated_on>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2017-01-20 14:41:39</sys_updated_on>
         <use_scoped_format>false</use_scoped_format>
     </sys_ui_script>
 </record_update>

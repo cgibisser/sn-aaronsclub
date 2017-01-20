@@ -15,21 +15,21 @@
         <scoped_administration>false</scoped_administration>
         <short_description/>
         <source>x_aaro2_club_claim</source>
-        <store_correlation_id/>
+        <store_correlation_id>REPOAPP0000018301</store_correlation_id>
         <store_url/>
         <sys_class_name>sys_app</sys_class_name>
         <sys_code/>
         <sys_created_by>xxlhburnet</sys_created_by>
         <sys_created_on>2016-09-13 11:33:55</sys_created_on>
         <sys_id>80403ef34f1966001491a50f0310c7a7</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_mod_count>55</sys_mod_count>
         <sys_updated_by>xxpgrupe</sys_updated_by>
-        <sys_updated_on>2017-01-20 13:22:12</sys_updated_on>
+        <sys_updated_on>2017-01-20 14:45:40</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <user_role/>
         <vendor/>
         <vendor_prefix/>
-        <version>1.1.031</version>
+        <version>1.1.032</version>
     </sys_app>
 </record_update>
