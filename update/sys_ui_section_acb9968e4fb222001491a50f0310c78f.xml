@@ -180,7 +180,7 @@
             <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_id>acb9968e4fb222001491a50f0310c78f</sys_id>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>1</sys_mod_count>
             <sys_name>x_aaro2_club_claim_todo</sys_name>
             <sys_overrides/>
             <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
@@ -189,7 +189,7 @@
             <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
             <sys_update_name>sys_ui_section_acb9968e4fb222001491a50f0310c78f</sys_update_name>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2016-11-01 19:03:33</sys_updated_on>
+            <sys_updated_on>2017-01-16 21:41:40</sys_updated_on>
             <sys_user/>
             <title>true</title>
             <view display_value="Default view" name="NULL">Default view</view>

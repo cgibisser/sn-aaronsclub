@@ -63,9 +63,9 @@ Date of the Incident</description>
         <sys_class_name>sys_ui_page</sys_class_name>
         <sys_created_by>xxrdoll</sys_created_by>
         <sys_created_on>2016-08-30 14:12:16</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_customer_update>true</sys_customer_update>
         <sys_id>970a78794f2922001491a50f0310c790</sys_id>
-        <sys_mod_count>181</sys_mod_count>
+        <sys_mod_count>183</sys_mod_count>
         <sys_name>Club_Claims_Stage_1</sys_name>
         <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
         <sys_policy/>
@@ -73,6 +73,6 @@ Date of the Incident</description>
         <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
         <sys_update_name>sys_ui_page_970a78794f2922001491a50f0310c790</sys_update_name>
         <sys_updated_by>xxpgrupe</sys_updated_by>
-        <sys_updated_on>2016-11-04 13:10:19</sys_updated_on>
+        <sys_updated_on>2017-01-19 17:49:36</sys_updated_on>
     </sys_ui_page>
 </record_update>

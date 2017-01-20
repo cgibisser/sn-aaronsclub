@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description>This will hold the contact info for where to send claim information. &#13;
+&lt;g:macro_invoke macro="x_aaro2_club_claim_contactInfo" /&gt;</description>
+        <media_type/>
+        <name>contactInfo</name>
+        <scoped_name>x_aaro2_club_claim_contactInfo</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>xxpgrupe</sys_created_by>
+        <sys_created_on>2017-01-19 18:02:23</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>71c0c5a34f50f6401491a50f0310c709</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>contactInfo</sys_name>
+        <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
+        <sys_update_name>sys_ui_macro_71c0c5a34f50f6401491a50f0310c709</sys_update_name>
+        <sys_updated_by>xxpgrupe</sys_updated_by>
+        <sys_updated_on>2017-01-19 18:04:19</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<p style="font-weight:bold;">Send claim form with support information to:
+		<a href="mailto:customerservice@benefitmarketingsolutions.com?Subject=Claim%20Information" target="_top">$[SP]customerservice@benefitmarketingsolutions.com</a>,
+			fax 855-511-7296, or mail to:
+	</p>
+	<ul class="list-unstyled" >
+		<li>Claims Department</li>
+		<li>900 36th Ave. NW</li>
+		<li>Suite 105</li>
+		<li>Norman, OK 73072</li>
+	</ul>
+	<p style="font-weight:bold;">For questions, call toll-free 1-888-322-6705.</p>
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>

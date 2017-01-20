@@ -137,7 +137,7 @@
             <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_id>de2f9c7b4f8a6e003ad149cf0310c7be</sys_id>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>1</sys_mod_count>
             <sys_name>x_aaro2_club_claim_payment</sys_name>
             <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
             <sys_policy/>
@@ -145,7 +145,7 @@
             <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
             <sys_update_name>sys_ui_list_x_aaro2_club_claim_payment_null</sys_update_name>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2016-09-30 13:50:28</sys_updated_on>
+            <sys_updated_on>2017-01-16 21:41:42</sys_updated_on>
             <sys_user display_value="Rebecca Doll - Admin">3769b1b24fafc200009509d14210c76b</sys_user>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>

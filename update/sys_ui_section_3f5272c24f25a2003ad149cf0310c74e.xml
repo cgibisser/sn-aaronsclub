@@ -166,7 +166,7 @@
             <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_id>3f5272c24f25a2003ad149cf0310c74e</sys_id>
-            <sys_mod_count>3</sys_mod_count>
+            <sys_mod_count>4</sys_mod_count>
             <sys_name>x_aaro2_club_claim_payment</sys_name>
             <sys_overrides/>
             <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
@@ -174,8 +174,8 @@
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
             <sys_update_name>sys_ui_section_3f5272c24f25a2003ad149cf0310c74e</sys_update_name>
-            <sys_updated_by>xxpgrupe</sys_updated_by>
-            <sys_updated_on>2016-09-30 11:23:04</sys_updated_on>
+            <sys_updated_by>xxrdoll</sys_updated_by>
+            <sys_updated_on>2017-01-16 21:41:36</sys_updated_on>
             <sys_user/>
             <title>true</title>
             <view display_value="Default view" name="NULL">Default view</view>

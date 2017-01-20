@@ -1,6 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update>
     <sys_ui_list parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" table="sys_update_version" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>name</element>
+            <list_id display_value="sys_update_version" element="NULL" name="sys_update_version" parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" view="Default view">32c0c5224f5cbe003ad149cf0310c70b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>xxcjgibiss</sys_created_by>
+            <sys_created_on>2017-01-16 15:26:17</sys_created_on>
+            <sys_id>36c0c5224f5cbe003ad149cf0310c70b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxcjgibiss</sys_updated_by>
+            <sys_updated_on>2017-01-16 15:26:17</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>action</element>
+            <list_id display_value="sys_update_version" element="NULL" name="sys_update_version" parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" view="Default view">32c0c5224f5cbe003ad149cf0310c70b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>xxcjgibiss</sys_created_by>
+            <sys_created_on>2017-01-16 15:26:17</sys_created_on>
+            <sys_id>b6c0c5224f5cbe003ad149cf0310c70b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxcjgibiss</sys_updated_by>
+            <sys_updated_on>2017-01-16 15:26:17</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>application</element>
+            <list_id display_value="sys_update_version" element="NULL" name="sys_update_version" parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" view="Default view">32c0c5224f5cbe003ad149cf0310c70b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>xxcjgibiss</sys_created_by>
+            <sys_created_on>2017-01-16 15:26:17</sys_created_on>
+            <sys_id>3ac0c5224f5cbe003ad149cf0310c70b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxcjgibiss</sys_updated_by>
+            <sys_updated_on>2017-01-16 15:26:17</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>comments</element>
+            <list_id display_value="sys_update_version" element="NULL" name="sys_update_version" parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" view="Default view">32c0c5224f5cbe003ad149cf0310c70b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>xxcjgibiss</sys_created_by>
+            <sys_created_on>2017-01-16 15:26:17</sys_created_on>
+            <sys_id>bac0c5224f5cbe003ad149cf0310c70b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxcjgibiss</sys_updated_by>
+            <sys_updated_on>2017-01-16 15:26:17</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>file_path</element>
+            <list_id display_value="sys_update_version" element="NULL" name="sys_update_version" parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" view="Default view">32c0c5224f5cbe003ad149cf0310c70b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>xxcjgibiss</sys_created_by>
+            <sys_created_on>2017-01-16 15:26:17</sys_created_on>
+            <sys_id>3ec0c5224f5cbe003ad149cf0310c70b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxcjgibiss</sys_updated_by>
+            <sys_updated_on>2017-01-16 15:26:17</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>instance_id</element>
+            <list_id display_value="sys_update_version" element="NULL" name="sys_update_version" parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" view="Default view">32c0c5224f5cbe003ad149cf0310c70b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>xxcjgibiss</sys_created_by>
+            <sys_created_on>2017-01-16 15:26:17</sys_created_on>
+            <sys_id>bec0c5224f5cbe003ad149cf0310c70b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxcjgibiss</sys_updated_by>
+            <sys_updated_on>2017-01-16 15:26:17</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>instance_name</element>
+            <list_id display_value="sys_update_version" element="NULL" name="sys_update_version" parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" view="Default view">32c0c5224f5cbe003ad149cf0310c70b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>xxcjgibiss</sys_created_by>
+            <sys_created_on>2017-01-16 15:26:17</sys_created_on>
+            <sys_id>32c0c5224f5cbe003ad149cf0310c70c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxcjgibiss</sys_updated_by>
+            <sys_updated_on>2017-01-16 15:26:17</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>order</element>
+            <list_id display_value="sys_update_version" element="NULL" name="sys_update_version" parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" view="Default view">32c0c5224f5cbe003ad149cf0310c70b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>xxcjgibiss</sys_created_by>
+            <sys_created_on>2017-01-16 15:26:17</sys_created_on>
+            <sys_id>b2c0c5224f5cbe003ad149cf0310c70c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxcjgibiss</sys_updated_by>
+            <sys_updated_on>2017-01-16 15:26:17</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>payload</element>
+            <list_id display_value="sys_update_version" element="NULL" name="sys_update_version" parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" view="Default view">32c0c5224f5cbe003ad149cf0310c70b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>xxcjgibiss</sys_created_by>
+            <sys_created_on>2017-01-16 15:26:17</sys_created_on>
+            <sys_id>36c0c5224f5cbe003ad149cf0310c70c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxcjgibiss</sys_updated_by>
+            <sys_updated_on>2017-01-16 15:26:17</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>payload_hash</element>
+            <list_id display_value="sys_update_version" element="NULL" name="sys_update_version" parent="sys_script" relationship="67bdac52374010008687ddb1967334ee" sys_domain="global" view="Default view">32c0c5224f5cbe003ad149cf0310c70b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>xxcjgibiss</sys_created_by>
+            <sys_created_on>2017-01-16 15:26:17</sys_created_on>
+            <sys_id>b6c0c5224f5cbe003ad149cf0310c70c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>xxcjgibiss</sys_updated_by>
+            <sys_updated_on>2017-01-16 15:26:17</sys_updated_on>
+        </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element/>
@@ -17,15 +167,15 @@
             <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_id>9e5216544f07a2003ad149cf0310c7b3</sys_id>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>1</sys_mod_count>
             <sys_name>sys_update_version</sys_name>
             <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
             <sys_policy/>
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
             <sys_update_name>sys_ui_list_sys_script_67bdac52374010008687ddb1967334ee_null</sys_update_name>
-            <sys_updated_by>xxcjgibiss</sys_updated_by>
-            <sys_updated_on>2016-11-08 18:17:47</sys_updated_on>
+            <sys_updated_by>xxrdoll</sys_updated_by>
+            <sys_updated_on>2017-01-16 21:41:39</sys_updated_on>
             <sys_user display_value="Charles Gibisser - Admin">aaf976e94fe502001491a50f0310c7b0</sys_user>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
