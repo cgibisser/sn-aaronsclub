@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="Claim" max_length="40" name="x_aaro2_club_claim_claim" sizeclass="25" type="collection">
+    <element audit="true" extends="task" label="Claim" max_length="40" name="x_aaro2_club_claim_claim" sizeclass="28" type="collection">
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Claim Number" max_length="40" name="claim_number" type="string"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" choice="1" label="Claim Sub-type" max_length="40" name="claim_sub_type" type="choice">
             <choice>

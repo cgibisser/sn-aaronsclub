@@ -4,152 +4,152 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>name</element>
-            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">1544f5154f94f2401491a50f0310c74b</list_id>
+            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">0bd66bdf4f68b2003ad149cf0310c733</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>xxrdoll</sys_created_by>
-            <sys_created_on>2017-01-12 21:58:47</sys_created_on>
-            <sys_id>1944f5154f94f2401491a50f0310c74b</sys_id>
+            <sys_created_on>2017-01-31 21:42:58</sys_created_on>
+            <sys_id>0fd66bdf4f68b2003ad149cf0310c733</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-12 21:58:47</sys_updated_on>
+            <sys_updated_on>2017-01-31 21:42:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>active</element>
-            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">1544f5154f94f2401491a50f0310c74b</list_id>
+            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">0bd66bdf4f68b2003ad149cf0310c733</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>xxrdoll</sys_created_by>
-            <sys_created_on>2017-01-12 21:58:47</sys_created_on>
-            <sys_id>9944f5154f94f2401491a50f0310c74b</sys_id>
+            <sys_created_on>2017-01-31 21:42:58</sys_created_on>
+            <sys_id>8fd66bdf4f68b2003ad149cf0310c733</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-12 21:58:47</sys_updated_on>
+            <sys_updated_on>2017-01-31 21:42:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>consumes</element>
-            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">1544f5154f94f2401491a50f0310c74b</list_id>
+            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">0bd66bdf4f68b2003ad149cf0310c733</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
             <sys_created_by>xxrdoll</sys_created_by>
-            <sys_created_on>2017-01-12 21:58:47</sys_created_on>
-            <sys_id>1d44f5154f94f2401491a50f0310c74b</sys_id>
+            <sys_created_on>2017-01-31 21:42:58</sys_created_on>
+            <sys_id>03d66bdf4f68b2003ad149cf0310c734</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-12 21:58:47</sys_updated_on>
+            <sys_updated_on>2017-01-31 21:42:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>consumes_customized</element>
-            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">1544f5154f94f2401491a50f0310c74b</list_id>
+            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">0bd66bdf4f68b2003ad149cf0310c733</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
             <sys_created_by>xxrdoll</sys_created_by>
-            <sys_created_on>2017-01-12 21:58:47</sys_created_on>
-            <sys_id>9d44f5154f94f2401491a50f0310c74b</sys_id>
+            <sys_created_on>2017-01-31 21:42:58</sys_created_on>
+            <sys_id>83d66bdf4f68b2003ad149cf0310c734</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-12 21:58:47</sys_updated_on>
+            <sys_updated_on>2017-01-31 21:42:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>enforce_acl</element>
-            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">1544f5154f94f2401491a50f0310c74b</list_id>
+            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">0bd66bdf4f68b2003ad149cf0310c733</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
             <sum>false</sum>
             <sys_created_by>xxrdoll</sys_created_by>
-            <sys_created_on>2017-01-12 21:58:47</sys_created_on>
-            <sys_id>1144f5154f94f2401491a50f0310c74c</sys_id>
+            <sys_created_on>2017-01-31 21:42:58</sys_created_on>
+            <sys_id>07d66bdf4f68b2003ad149cf0310c734</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-12 21:58:47</sys_updated_on>
+            <sys_updated_on>2017-01-31 21:42:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>http_method</element>
-            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">1544f5154f94f2401491a50f0310c74b</list_id>
+            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">0bd66bdf4f68b2003ad149cf0310c733</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
             <sum>false</sum>
             <sys_created_by>xxrdoll</sys_created_by>
-            <sys_created_on>2017-01-12 21:58:47</sys_created_on>
-            <sys_id>9144f5154f94f2401491a50f0310c74c</sys_id>
+            <sys_created_on>2017-01-31 21:42:58</sys_created_on>
+            <sys_id>87d66bdf4f68b2003ad149cf0310c734</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-12 21:58:47</sys_updated_on>
+            <sys_updated_on>2017-01-31 21:42:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>operation_script</element>
-            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">1544f5154f94f2401491a50f0310c74b</list_id>
+            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">0bd66bdf4f68b2003ad149cf0310c733</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>6</position>
             <sum>false</sum>
             <sys_created_by>xxrdoll</sys_created_by>
-            <sys_created_on>2017-01-12 21:58:47</sys_created_on>
-            <sys_id>1544f5154f94f2401491a50f0310c74c</sys_id>
+            <sys_created_on>2017-01-31 21:42:58</sys_created_on>
+            <sys_id>0bd66bdf4f68b2003ad149cf0310c734</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-12 21:58:47</sys_updated_on>
+            <sys_updated_on>2017-01-31 21:42:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>produces</element>
-            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">1544f5154f94f2401491a50f0310c74b</list_id>
+            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">0bd66bdf4f68b2003ad149cf0310c733</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>7</position>
             <sum>false</sum>
             <sys_created_by>xxrdoll</sys_created_by>
-            <sys_created_on>2017-01-12 21:58:47</sys_created_on>
-            <sys_id>9544f5154f94f2401491a50f0310c74c</sys_id>
+            <sys_created_on>2017-01-31 21:42:58</sys_created_on>
+            <sys_id>8bd66bdf4f68b2003ad149cf0310c734</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-12 21:58:47</sys_updated_on>
+            <sys_updated_on>2017-01-31 21:42:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>produces_customized</element>
-            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">1544f5154f94f2401491a50f0310c74b</list_id>
+            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">0bd66bdf4f68b2003ad149cf0310c733</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>8</position>
             <sum>false</sum>
             <sys_created_by>xxrdoll</sys_created_by>
-            <sys_created_on>2017-01-12 21:58:47</sys_created_on>
-            <sys_id>1944f5154f94f2401491a50f0310c74c</sys_id>
+            <sys_created_on>2017-01-31 21:42:58</sys_created_on>
+            <sys_id>0fd66bdf4f68b2003ad149cf0310c734</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-12 21:58:47</sys_updated_on>
+            <sys_updated_on>2017-01-31 21:42:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>relative_path</element>
-            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">1544f5154f94f2401491a50f0310c74b</list_id>
+            <list_id display_value="sys_ws_operation" element="NULL" name="sys_ws_operation" parent="sys_ws_definition" relationship="NULL" sys_domain="global" view="Default view">0bd66bdf4f68b2003ad149cf0310c733</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>9</position>
             <sum>false</sum>
             <sys_created_by>xxrdoll</sys_created_by>
-            <sys_created_on>2017-01-12 21:58:47</sys_created_on>
-            <sys_id>9944f5154f94f2401491a50f0310c74c</sys_id>
+            <sys_created_on>2017-01-31 21:42:58</sys_created_on>
+            <sys_id>8fd66bdf4f68b2003ad149cf0310c734</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-12 21:58:47</sys_updated_on>
+            <sys_updated_on>2017-01-31 21:42:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -167,15 +167,15 @@
             <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_id>b03f049e4f6262003ad149cf0310c7fc</sys_id>
-            <sys_mod_count>1</sys_mod_count>
+            <sys_mod_count>2</sys_mod_count>
             <sys_name>sys_ws_operation</sys_name>
             <sys_package display_value="Club Claims" source="x_aaro2_club_claim">80403ef34f1966001491a50f0310c7a7</sys_package>
             <sys_policy/>
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="Club Claims">80403ef34f1966001491a50f0310c7a7</sys_scope>
             <sys_update_name>sys_ui_list_sys_ws_operation_sys_ws_definition_null</sys_update_name>
-            <sys_updated_by>xxrdoll</sys_updated_by>
-            <sys_updated_on>2017-01-16 21:41:40</sys_updated_on>
+            <sys_updated_by>xxpgrupe</sys_updated_by>
+            <sys_updated_on>2017-02-08 13:12:18</sys_updated_on>
             <sys_user display_value="Rebecca Doll - Admin">3769b1b24fafc200009509d14210c76b</sys_user>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
